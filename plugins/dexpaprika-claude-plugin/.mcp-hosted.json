@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "dexpaprika": {
+      "url": "https://your-dexpaprika-mcp-server-endpoint.com/mcp"
+    }
+  }
+}
