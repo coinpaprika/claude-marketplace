@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Access comprehensive DeFi data from DexPaprika including DEXes, liquidity pools, tokens, and trading information across 26+ blockchains",
   "author": {
-    "name": "CoinPaprika & DexPaprika"
+    "name": "CoinPaprika"
   },
-  "homepage": "https://dex.paprika.tools",
+  "homepage": "https://mcp.dexpaprika.com",
   "repository": "https://github.com/coinpaprika/claude-marketplace",
   "license": "MIT",
   "keywords": [
