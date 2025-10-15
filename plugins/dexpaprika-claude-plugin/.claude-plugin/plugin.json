@@ -19,5 +19,9 @@
     "trading",
     "analytics"
   ],
-  "mcpServers": "./.mcp.json"
+  "mcpServers": {
+    "dexpaprika": {
+      "url": "https://mcp.dexpaprika.com/sse"
+    }
+  }
 }
