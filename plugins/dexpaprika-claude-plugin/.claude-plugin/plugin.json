@@ -19,8 +19,15 @@
     "trading",
     "analytics"
   ],
-  "agents": "./agents/",
-  "commands": "./commands/",
+  "agents": [
+    "./agents/defi-data-analyst.md",
+    "./agents/optimized-defi-analyst.md"
+  ],
+  "commands": [
+    "./commands/intro.md",
+    "./commands/analyze-token.md",
+    "./commands/find-best-token.md"
+  ],
   "mcpServers": {
     "dexpaprika": {
       "type": "sse",
