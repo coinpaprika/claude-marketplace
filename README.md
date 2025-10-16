@@ -2,11 +2,41 @@
 
 Official Claude Code marketplace for CoinPaprika and DexPaprika plugins.
 
-## Install
+## Quick Start
+
+To install the DexPaprika plugin, run these two commands:
 
 ```bash
-/plugin marketplace add coinpaprika/claude-marketplace
-/plugin install dexpaprika-defi-tools@coinpaprika-plugins
+# 1. Add the marketplace
+claude plugin marketplace add coinpaprika/claude-marketplace
+
+# 2. Add the MCP server (IMPORTANT: include --transport sse)
+claude mcp add --transport sse dexpaprika https://mcp.dexpaprika.com/sse
+```
+
+## Installation
+
+### Step 1: Add the Marketplace
+
+```bash
+claude plugin marketplace add coinpaprika/claude-marketplace
+```
+
+### Step 2: Add the MCP Server
+
+```bash
+claude mcp add --transport sse dexpaprika https://mcp.dexpaprika.com/sse
+```
+
+### Step 3: Verify Installation
+
+```bash
+claude mcp list
+```
+
+You should see:
+```
+dexpaprika: https://mcp.dexpaprika.com/sse (SSE) - ✓ Connected
 ```
 
 ## Smoke tests

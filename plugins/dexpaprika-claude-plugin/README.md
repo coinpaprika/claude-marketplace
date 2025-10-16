@@ -16,28 +16,43 @@ A Claude Code plugin that provides access to comprehensive DeFi data from DexPap
 
 ## Installation
 
-### Option 1: Using the npm package (if available)
+### Prerequisites
 
-The plugin is configured to use the `@coinpaprika/dexpaprika-mcp` npm package. Make sure you have Node.js installed, then:
+- Claude Code CLI installed
+- Internet connection for accessing the hosted MCP server
+
+### Step-by-Step Installation
+
+#### Step 1: Add the CoinPaprika Marketplace
 
 ```bash
-# The plugin will automatically install required dependencies when loaded
-/plugin install dexpaprika-defi-tools@your-marketplace
+claude plugin marketplace add coinpaprika/claude-marketplace
 ```
 
-### Option 2: Using hosted MCP server
+This command clones the marketplace repository and makes the DexPaprika plugin available.
 
-If DexPaprika provides a hosted MCP server endpoint, the configuration can be updated in `.mcp.json`:
+#### Step 2: Add the DexPaprika MCP Server
 
-```json
-{
-  "mcpServers": {
-    "dexpaprika": {
-      "url": "https://your-hosted-mcp-server-endpoint"
-    }
-  }
-}
+**IMPORTANT:** You must specify the `--transport sse` flag for the SSE (Server-Sent Events) server:
+
+```bash
+claude mcp add --transport sse dexpaprika https://mcp.dexpaprika.com/sse
 ```
+
+⚠️ **Common Mistake:** Do NOT forget the `--transport sse` flag! Without it, the server will be configured incorrectly and won't connect.
+
+#### Step 3: Verify Installation
+
+```bash
+claude mcp list
+```
+
+Expected output:
+```
+dexpaprika: https://mcp.dexpaprika.com/sse (SSE) - ✓ Connected
+```
+
+If you see "✓ Connected", the installation was successful!
 
 ## Quick Start
 
@@ -233,14 +248,38 @@ Additional endpoints:
 
 ## Troubleshooting
 
-If you encounter issues:
+### Installation Issues
 
-1. **Plugin Loading**: Check that Node.js is installed and accessible
-2. **Network Issues**: Verify connectivity to `mcp.dexpaprika.com`
-3. **Invalid Network Names**: Use `getCapabilities` to get valid network IDs and synonyms
-4. **Too Many Tokens**: Batched price requests limited to 10 tokens maximum
-5. **Missing Data**: Some tokens may not have price data (they're omitted from results)
-6. **Debug Output**: Check Claude's debug output for detailed error messages
+**MCP Server Not Connecting?**
+
+If you see "No MCP servers configured" or the server shows as disconnected:
+
+1. **Verify you used the correct command with `--transport sse`:**
+   ```bash
+   claude mcp list
+   ```
+
+2. **If missing the SSE transport, remove and re-add:**
+   ```bash
+   claude mcp remove dexpaprika
+   claude mcp add --transport sse dexpaprika https://mcp.dexpaprika.com/sse
+   ```
+
+3. **Verify the connection:**
+   ```bash
+   claude mcp list
+   ```
+   Should show: `dexpaprika: https://mcp.dexpaprika.com/sse (SSE) - ✓ Connected`
+
+### Common Runtime Issues
+
+If you encounter issues during use:
+
+1. **Network Issues**: Verify connectivity to `mcp.dexpaprika.com`
+2. **Invalid Network Names**: Use `getCapabilities` to get valid network IDs and synonyms
+3. **Too Many Tokens**: Batched price requests limited to 10 tokens maximum
+4. **Missing Data**: Some tokens may not have price data (they're omitted from results)
+5. **Debug Output**: Check Claude's debug output for detailed error messages
 
 ### Common Error Codes
 
