@@ -19,6 +19,8 @@
     "trading",
     "analytics"
   ],
+  "agents": "./agents/",
+  "commands": "./commands/",
   "mcpServers": {
     "dexpaprika": {
       "type": "sse",

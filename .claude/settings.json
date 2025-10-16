@@ -1,0 +1,13 @@
+{
+  "plugins": {
+    "marketplaces": [
+      {
+        "name": "coinpaprika-plugins",
+        "source": "."
+      }
+    ],
+    "installed": [
+      "dexpaprika-defi-tools@coinpaprika-plugins"
+    ]
+  }
+}
