@@ -21,6 +21,7 @@
   ],
   "mcpServers": {
     "dexpaprika": {
+      "type": "sse",
       "url": "https://mcp.dexpaprika.com/sse"
     }
   }
