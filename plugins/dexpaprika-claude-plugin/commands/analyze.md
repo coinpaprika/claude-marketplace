@@ -1,7 +1,8 @@
 ---
-name: analyze-token
-description: Analyze a token for scams, honeypots, and security risks using the DeFi data analyst
+description: Analyze a token for security risks, scams, and honeypots
 ---
+
+# Token Security Analysis
 
 Invoke the DeFi data analyst agent to perform comprehensive security analysis on the specified token.
 

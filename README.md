@@ -28,7 +28,7 @@ cd claude-marketplace
 
 ✅ **MCP Server** - Hosted at `https://mcp.dexpaprika.com/sse` (auto-configured)
 ✅ **DeFi Analyst Agent** - Scam detection, honeypot analysis, security assessment
-✅ **Slash Commands** - `/find-best-token`, `/analyze-token`, `/intro`
+✅ **Slash Commands** - `/dexpaprika:intro`, `/dexpaprika:networks`, `/dexpaprika:trending`, `/dexpaprika:prices`, `/dexpaprika:analyze`
 ✅ **26+ Networks** - Ethereum, BSC, Base, Solana, Polygon, Arbitrum, and more
 ✅ **9 MCP Tools** - getNetworks, getTokenDetails, getPoolOHLCV, getTokenPools, etc.
 
@@ -36,11 +36,17 @@ cd claude-marketplace
 
 After installation, try:
 ```
-/dexpaprika-defi-tools:find-best-token
+/dexpaprika:intro
 ```
-Then specify "BSC" - you should see top 3 legitimate tokens with security analysis!
+This shows the quick start guide and all available commands.
 
-Or test MCP tools:
+Or test a command:
+```
+/dexpaprika:trending
+```
+Then specify "Base" - you should see top pools ranked by 24h volume!
+
+Or test MCP tools directly:
 ```
 Using DexPaprika MCP, show top 10 pools on Base by 24h volume
 ```
@@ -60,14 +66,15 @@ Using DexPaprika MCP, show top 10 pools on Base by 24h volume
 - Transaction history and patterns
 - DEX aggregation and comparison
 
-### 🤖 Agents Included
-- `defi-data-analyst` (v1) - Original comprehensive agent
-- `defi-data-analyst-v2` (optimized) - 50% faster, 46% fewer API calls
+### 🤖 Agent Included
+- `@defi-data-analyst` - DeFi analytics and security analysis agent
 
 ### 📝 Slash Commands
-- `/dexpaprika-defi-tools:intro` - Quick start guide
-- `/dexpaprika-defi-tools:analyze-token` - Security analysis for specific token
-- `/dexpaprika-defi-tools:find-best-token` - Find best performing legitimate token
+- `/dexpaprika:intro` - Overview and quick start guide
+- `/dexpaprika:networks` - List all 26+ supported blockchain networks
+- `/dexpaprika:trending` - Show top pools by 24h volume on a network
+- `/dexpaprika:prices` - Get batched prices for multiple tokens (max 10)
+- `/dexpaprika:analyze` - Analyze a token for security risks and honeypots
 
 ## Documentation
 
@@ -96,12 +103,13 @@ claude-marketplace/
 │       ├── .claude-plugin/
 │       │   └── plugin.json         # Plugin config (MCP + agents + commands)
 │       ├── agents/
-│       │   ├── defi-data-analyst.md       # v1 agent
-│       │   └── optimized-defi-analyst.md  # v2 optimized
+│       │   └── defi-data-analyst.md       # DeFi analyst agent
 │       ├── commands/
 │       │   ├── intro.md
-│       │   ├── analyze-token.md
-│       │   └── find-best-token.md
+│       │   ├── networks.md
+│       │   ├── trending.md
+│       │   ├── prices.md
+│       │   └── analyze.md
 │       └── README.md
 ├── INSTALLATION.md                 # Complete installation guide
 ├── AGENT_OPTIMIZATION_REPORT.md   # Agent improvements and analysis
@@ -121,21 +129,27 @@ claude mcp list
 # Should show: defi-data-analyst
 
 # 3. Check commands
-/dexpaprika-defi-tools:intro
+/dexpaprika:intro
 # Should show: DexPaprika quick start guide
 ```
 
 ## Example Workflows
 
-**Find Best Token on Network**:
+**List Supported Networks**:
 ```
-/dexpaprika-defi-tools:find-best-token
-# Analyzes top pools, filters scams, returns top 3 legitimate tokens
+/dexpaprika:networks
+# Shows all 26+ blockchain networks available
+```
+
+**Show Trending Pools**:
+```
+/dexpaprika:trending
+# Shows top pools by 24h volume on specified network
 ```
 
 **Analyze Token Security**:
 ```
-/dexpaprika-defi-tools:analyze-token
+/dexpaprika:analyze
 # Comprehensive security check for honeypots, rug pulls, manipulation
 ```
 

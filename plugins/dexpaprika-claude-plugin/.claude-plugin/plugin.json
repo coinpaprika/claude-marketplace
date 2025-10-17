@@ -5,7 +5,7 @@
   "author": {
     "name": "CoinPaprika"
   },
-  "homepage": "https://mcp.dexpaprika.com",
+  "homepage": "https://dexpaprika.com",
   "repository": "https://github.com/coinpaprika/claude-marketplace",
   "license": "MIT",
   "keywords": [
@@ -20,13 +20,14 @@
     "analytics"
   ],
   "agents": [
-    "./agents/defi-data-analyst.md",
-    "./agents/optimized-defi-analyst.md"
+    "./agents/defi-data-analyst.md"
   ],
   "commands": [
     "./commands/intro.md",
-    "./commands/analyze-token.md",
-    "./commands/find-best-token.md"
+    "./commands/networks.md",
+    "./commands/trending.md",
+    "./commands/prices.md",
+    "./commands/analyze.md"
   ],
   "mcpServers": {
     "dexpaprika": {

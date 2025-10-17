@@ -61,10 +61,28 @@ If you see "✓ Connected", the installation was successful!
 **Start by running the intro command** to see comprehensive guidance:
 
 ```bash
-/dexpaprika-defi-tools:intro
+/dexpaprika:intro
 ```
 
 Or call `getCapabilities` to learn about workflows, network synonyms, and best practices.
+
+### Available Commands
+
+- `/dexpaprika:intro` - Overview of DexPaprika capabilities and quick start guide
+- `/dexpaprika:networks` - List all 26+ supported blockchain networks
+- `/dexpaprika:trending` - Show top pools by 24h volume on a network
+- `/dexpaprika:prices` - Get batched prices for multiple tokens (max 10)
+- `/dexpaprika:analyze` - Analyze a token for security risks and honeypots
+
+### Using the Agent
+
+The plugin includes a DeFi data analyst agent that you can invoke with:
+
+```
+@defi-data-analyst
+```
+
+Use it for comprehensive token analysis, scam detection, and market intelligence.
 
 ## Usage
 
