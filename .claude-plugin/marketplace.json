@@ -33,6 +33,32 @@
         "analytics"
       ],
       "category": "defi"
+    },
+    {
+      "name": "coinpaprika-market-data",
+      "source": "./plugins/coinpaprika-plugin",
+      "description": "Access comprehensive cryptocurrency market data from CoinPaprika including real-time prices, market metrics, historical data, and on-chain analytics for 8000+ cryptocurrencies",
+      "version": "1.0.0",
+      "author": {
+        "name": "CoinPaprika"
+      },
+      "homepage": "https://coinpaprika.com",
+      "repository": "https://github.com/CoinPaprika/claude-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "cryptocurrency",
+        "crypto",
+        "market-data",
+        "prices",
+        "coins",
+        "tokens",
+        "blockchain",
+        "bitcoin",
+        "ethereum",
+        "analytics",
+        "trading"
+      ],
+      "category": "cryptocurrency"
     }
   ]
 }
