@@ -9,18 +9,18 @@ Your one-stop reference for all DeFi analytics features.
 ## 📊 Quick Start Commands
 
 ### Network & Discovery
-- `/dexpaprika-defi-tools:networks` - List all 26+ supported blockchains
-- `/dexpaprika-defi-tools:intro` - Getting started guide
+- `/dexpaprika:networks` - List all 26+ supported blockchains
+- `/dexpaprika:intro` - Getting started guide
 
 ### Pool Analytics
-- `/dexpaprika-defi-tools:trending` - Top pools by 24h volume
+- `/dexpaprika:trending` - Top pools by 24h volume
 
 ### Token Analysis
-- `/dexpaprika-defi-tools:prices` - Batch token pricing (up to 10)
-- `/dexpaprika-defi-tools:analyze` - Security analysis (honeypot detection)
+- `/dexpaprika:prices` - Batch token pricing (up to 10)
+- `/dexpaprika:analyze` - Security analysis (honeypot detection)
 
 ### System
-- `/dexpaprika-defi-tools:help` - This help guide
+- `/dexpaprika:help` - This help guide
 
 ## 🤖 Expert Agent
 
@@ -86,55 +86,55 @@ These tools power the plugin (used automatically):
 
 ## 📖 Command Details
 
-### /dexpaprika-defi-tools:networks
+### /dexpaprika:networks
 List all 26+ supported blockchain networks.
 
 **Example**:
 ```
-/dexpaprika-defi-tools:networks
+/dexpaprika:networks
 ```
 
-### /dexpaprika-defi-tools:trending
+### /dexpaprika:trending
 Show top liquidity pools by 24-hour trading volume.
 
 **Required**: Network name
 
 **Example**:
 ```
-/dexpaprika-defi-tools:trending
+/dexpaprika:trending
 Show me trending pools on Base
 Top 20 pools on Ethereum by volume
 ```
 
-### /dexpaprika-defi-tools:prices
+### /dexpaprika:prices
 Get batch prices for multiple tokens (max 10 per request).
 
 **Required**: Network and token addresses
 
 **Example**:
 ```
-/dexpaprika-defi-tools:prices
+/dexpaprika:prices
 Get prices for USDC, USDT, DAI on Ethereum
 ```
 
-### /dexpaprika-defi-tools:analyze
+### /dexpaprika:analyze
 Comprehensive security analysis for honeypots, rug pulls, and scams.
 
 **Required**: Token address and network
 
 **Example**:
 ```
-/dexpaprika-defi-tools:analyze
+/dexpaprika:analyze
 Analyze 0x123... on ethereum for security risks
 Is this token safe: 0x456... on bsc
 ```
 
-### /dexpaprika-defi-tools:intro
+### /dexpaprika:intro
 Getting started guide with workflows and best practices.
 
 **Example**:
 ```
-/dexpaprika-defi-tools:intro
+/dexpaprika:intro
 ```
 
 ## 🎯 Common Use Cases
@@ -181,7 +181,7 @@ Getting started guide with workflows and best practices.
 **Other Networks**:
 - BSC, Avalanche, Fantom, Cronos, and 15+ more
 
-**Full List**: Run `/dexpaprika-defi-tools:networks`
+**Full List**: Run `/dexpaprika:networks`
 
 ## ⚡ Pro Tips
 
@@ -261,7 +261,7 @@ Features:
 ## 🆘 Troubleshooting
 
 ### "Invalid network" error
-→ Run `/dexpaprika-defi-tools:networks` for full list
+→ Run `/dexpaprika:networks` for full list
 → Use common names (Claude normalizes automatically)
 
 ### "Too many tokens" error
@@ -277,7 +277,7 @@ Features:
 → Use batching and caching
 
 ### Need help?
-→ Run `/dexpaprika-defi-tools:intro` for getting started
+→ Run `/dexpaprika:intro` for getting started
 → Visit: https://github.com/coinpaprika/claude-marketplace
 
 ## 📚 Additional Resources

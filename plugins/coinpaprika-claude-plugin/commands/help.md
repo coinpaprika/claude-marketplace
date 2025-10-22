@@ -9,16 +9,16 @@ Your one-stop reference for all cryptocurrency market data features.
 ## 📊 Quick Start Commands
 
 ### Market Overview
-- `/coinpaprika-market-data:market-overview` - Global crypto market statistics
-- `/coinpaprika-market-data:top-coins` - Top cryptocurrencies by market cap
+- `/coinpaprika:overview` - Global crypto market statistics
+- `/coinpaprika:top` - Top cryptocurrencies by market cap
 
 ### Coin Research
-- `/coinpaprika-market-data:coin-info` - Detailed coin information
-- `/coinpaprika-market-data:search` - Find cryptocurrencies by name/symbol
+- `/coinpaprika:info` - Detailed coin information
+- `/coinpaprika:search` - Find cryptocurrencies by name/symbol
 
 ### System
-- `/coinpaprika-market-data:help` - This help guide
-- `/coinpaprika-market-data:intro` - Getting started guide
+- `/coinpaprika:help` - This help guide
+- `/coinpaprika:intro` - Getting started guide
 
 ## 🤖 Expert Agent
 
@@ -92,54 +92,54 @@ These tools power the plugin (used automatically):
 
 ## 📖 Command Details
 
-### /coinpaprika-market-data:market-overview
+### /coinpaprika:overview
 Get global cryptocurrency market statistics including total market cap, Bitcoin dominance, and 24h volume.
 
 **Example**:
 ```
-/coinpaprika-market-data:market-overview
+/coinpaprika:overview
 ```
 
-### /coinpaprika-market-data:top-coins
+### /coinpaprika:top
 Show top cryptocurrencies ranked by market capitalization.
 
 **Options**: Specify number (default: 20)
 
 **Example**:
 ```
-/coinpaprika-market-data:top-coins
+/coinpaprika:top
 Show me top 50 cryptocurrencies
 ```
 
-### /coinpaprika-market-data:coin-info
+### /coinpaprika:info
 Get comprehensive information about a specific cryptocurrency.
 
 **Required**: Coin name or symbol
 
 **Example**:
 ```
-/coinpaprika-market-data:coin-info Bitcoin
+/coinpaprika:info Bitcoin
 Tell me about Ethereum
 ```
 
-### /coinpaprika-market-data:search
+### /coinpaprika:search
 Search for cryptocurrencies by name, symbol, or keyword.
 
 **Required**: Search query
 
 **Example**:
 ```
-/coinpaprika-market-data:search
+/coinpaprika:search
 Search for DeFi coins
 Find tokens with "chain" in the name
 ```
 
-### /coinpaprika-market-data:intro
+### /coinpaprika:intro
 Getting started guide with examples and workflows.
 
 **Example**:
 ```
-/coinpaprika-market-data:intro
+/coinpaprika:intro
 ```
 
 ## 🎯 Common Use Cases
@@ -196,7 +196,7 @@ Looking for liquidity pools, DEX trading, or token security analysis?
 
 Try the DexPaprika plugin:
 ```
-/dexpaprika-defi-tools:intro
+/dexpaprika:intro
 ```
 
 Features:
@@ -208,7 +208,7 @@ Features:
 ## 🆘 Troubleshooting
 
 ### "Coin not found" error
-→ Use `/coinpaprika-market-data:search` to find correct coin ID
+→ Use `/coinpaprika:search` to find correct coin ID
 
 ### Rate limit exceeded
 → Wait a few minutes or reduce number of requests
@@ -217,7 +217,7 @@ Features:
 → Coin might be inactive/delisted or ID incorrect
 
 ### Need help?
-→ Run `/coinpaprika-market-data:intro` for getting started guide
+→ Run `/coinpaprika:intro` for getting started guide
 → Visit: https://github.com/coinpaprika/claude-marketplace
 
 ## 📚 Additional Resources

@@ -11,7 +11,7 @@
   },
   "plugins": [
     {
-      "name": "dexpaprika-defi-tools",
+      "name": "dexpaprika",
       "source": "./plugins/dexpaprika-claude-plugin",
       "description": "Access comprehensive DeFi data from DexPaprika including DEXes, liquidity pools, tokens, and trading information across 26+ blockchains",
       "version": "1.0.0",
@@ -35,7 +35,7 @@
       "category": "defi"
     },
     {
-      "name": "coinpaprika-market-data",
+      "name": "coinpaprika",
       "source": "./plugins/coinpaprika-claude-plugin",
       "description": "Access comprehensive cryptocurrency market data from CoinPaprika including real-time prices, market metrics, historical data, and on-chain analytics for 8000+ cryptocurrencies",
       "version": "1.0.0",

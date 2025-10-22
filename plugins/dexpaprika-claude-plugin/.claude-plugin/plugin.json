@@ -1,5 +1,5 @@
 {
-  "name": "dexpaprika-defi-tools",
+  "name": "dexpaprika",
   "version": "1.0.0",
   "description": "Access comprehensive DeFi data from DexPaprika including DEXes, liquidity pools, tokens, and trading information across 26+ blockchains",
   "author": {

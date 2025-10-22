@@ -1,5 +1,5 @@
 {
-  "name": "coinpaprika-market-data",
+  "name": "coinpaprika",
   "version": "1.0.0",
   "description": "Access comprehensive cryptocurrency market data from CoinPaprika including real-time prices, market metrics, historical data, and on-chain analytics for 8000+ cryptocurrencies",
   "author": {
@@ -28,9 +28,9 @@
     "./commands/intro.md",
     "./commands/help.md",
     "./commands/health.md",
-    "./commands/top-coins.md",
-    "./commands/coin-info.md",
-    "./commands/market-overview.md",
+    "./commands/top.md",
+    "./commands/info.md",
+    "./commands/overview.md",
     "./commands/search.md"
   ],
   "mcpServers": {

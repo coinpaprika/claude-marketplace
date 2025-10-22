@@ -36,7 +36,7 @@ claude mcp list
 
 Should show:
 ```
-plugin:coinpaprika-market-data:coinpaprika: https://mcp.coinpaprika.com/sse (SSE) - ✓ Connected
+plugin:coinpaprika:coinpaprika: https://mcp.coinpaprika.com/sse (SSE) - ✓ Connected
 ```
 
 ### 2. Tool Availability Test
@@ -111,13 +111,13 @@ COINPAPRIKA PLUGIN HEALTH STATUS
   Data Timestamp: [recent]
 
 ✓ Commands Available
-  - /coinpaprika-market-data:help
-  - /coinpaprika-market-data:intro
-  - /coinpaprika-market-data:market-overview
-  - /coinpaprika-market-data:top-coins
-  - /coinpaprika-market-data:coin-info
-  - /coinpaprika-market-data:search
-  - /coinpaprika-market-data:health
+  - /coinpaprika:help
+  - /coinpaprika:intro
+  - /coinpaprika:overview
+  - /coinpaprika:top
+  - /coinpaprika:info
+  - /coinpaprika:search
+  - /coinpaprika:health
 
 ✓ Agents Available
   - @crypto-analyst (Market Analysis)
@@ -174,7 +174,7 @@ OVERALL STATUS: ✓ ALL SYSTEMS OPERATIONAL
 1. Use correct coin ID format: `symbol-name` (e.g., `btc-bitcoin`)
 2. Use search to find correct ID:
    ```
-   /coinpaprika-market-data:search bitcoin
+   /coinpaprika:search bitcoin
    ```
 3. Check for typos in coin ID
 
@@ -239,8 +239,8 @@ To stay within the 10,000 requests/day limit:
 
 If all checks pass:
 - ✓ Plugin is ready to use
-- ✓ Try `/coinpaprika-market-data:intro` for getting started
-- ✓ Use `/coinpaprika-market-data:help` for full reference
+- ✓ Try `/coinpaprika:intro` for getting started
+- ✓ Use `/coinpaprika:help` for full reference
 - ✓ Invoke `@crypto-analyst` for analysis
 
 If any checks fail:

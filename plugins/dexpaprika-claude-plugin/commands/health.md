@@ -37,7 +37,7 @@ claude mcp list
 
 Should show:
 ```
-plugin:dexpaprika-defi-tools:dexpaprika: https://mcp.dexpaprika.com/sse (SSE) - ✓ Connected
+plugin:dexpaprika:dexpaprika: https://mcp.dexpaprika.com/sse (SSE) - ✓ Connected
 ```
 
 ### 2. Tool Availability Test
@@ -141,13 +141,13 @@ DEXPAPRIKA PLUGIN HEALTH STATUS
   Recent Data: ✓ Timestamps current
 
 ✓ Commands Available
-  - /dexpaprika-defi-tools:help
-  - /dexpaprika-defi-tools:intro
-  - /dexpaprika-defi-tools:networks
-  - /dexpaprika-defi-tools:trending
-  - /dexpaprika-defi-tools:prices
-  - /dexpaprika-defi-tools:analyze
-  - /dexpaprika-defi-tools:health
+  - /dexpaprika:help
+  - /dexpaprika:intro
+  - /dexpaprika:networks
+  - /dexpaprika:trending
+  - /dexpaprika:prices
+  - /dexpaprika:analyze
+  - /dexpaprika:health
 
 ✓ Agents Available
   - @defi-data-analyst (Security Analysis)
@@ -191,7 +191,7 @@ OVERALL STATUS: ✓ ALL SYSTEMS OPERATIONAL
 
 **Solutions**:
 1. Use canonical network IDs: `ethereum`, `bsc`, `polygon`, `base`
-2. Run `/dexpaprika-defi-tools:networks` to see full list
+2. Run `/dexpaprika:networks` to see full list
 3. Network synonyms should work automatically (e.g., "Binance Smart Chain" → `bsc`)
 4. If getCapabilities exists, check `network_synonyms` mapping
 
@@ -326,8 +326,8 @@ To stay within the 10,000 requests/day limit:
 
 If all checks pass:
 - ✓ Plugin is ready to use
-- ✓ Try `/dexpaprika-defi-tools:intro` for getting started
-- ✓ Use `/dexpaprika-defi-tools:help` for full reference
+- ✓ Try `/dexpaprika:intro` for getting started
+- ✓ Use `/dexpaprika:help` for full reference
 - ✓ Invoke `@defi-data-analyst` for security analysis
 
 If any checks fail:
@@ -342,14 +342,14 @@ For comprehensive testing, try these workflows:
 
 **1. Trending Analysis**:
 ```
-/dexpaprika-defi-tools:trending
+/dexpaprika:trending
 Network: Ethereum
 Should show top 10 pools with volume data
 ```
 
 **2. Token Security Check**:
 ```
-/dexpaprika-defi-tools:analyze
+/dexpaprika:analyze
 Token: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
 Network: ethereum
 Should identify USDC as safe, established stablecoin
@@ -357,7 +357,7 @@ Should identify USDC as safe, established stablecoin
 
 **3. Batch Pricing**:
 ```
-/dexpaprika-defi-tools:prices
+/dexpaprika:prices
 Network: ethereum
 Tokens: USDC, USDT, DAI
 Should return prices near $1 for all three stablecoins

@@ -333,9 +333,6 @@ Data Points: [X] price points, [X] events analyzed
 - Comparing market price vs DEX price
 - Full due diligence requested
 
-**Detailed Framework**:
-For comprehensive methodology, see: `/coinpaprika-market-data:analysis-framework`
-
 ---
 
 **Important Notes**:

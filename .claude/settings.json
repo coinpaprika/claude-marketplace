@@ -7,7 +7,8 @@
       }
     ],
     "installed": [
-      "dexpaprika-defi-tools@coinpaprika-plugins"
+      "coinpaprika@coinpaprika-plugins",
+      "dexpaprika@coinpaprika-plugins"
     ]
   }
 }
