@@ -36,7 +36,7 @@
     },
     {
       "name": "coinpaprika-market-data",
-      "source": "./plugins/coinpaprika-plugin",
+      "source": "./plugins/coinpaprika-claude-plugin",
       "description": "Access comprehensive cryptocurrency market data from CoinPaprika including real-time prices, market metrics, historical data, and on-chain analytics for 8000+ cryptocurrencies",
       "version": "1.0.0",
       "author": {

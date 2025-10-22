@@ -26,6 +26,8 @@
   ],
   "commands": [
     "./commands/intro.md",
+    "./commands/help.md",
+    "./commands/health.md",
     "./commands/top-coins.md",
     "./commands/coin-info.md",
     "./commands/market-overview.md",

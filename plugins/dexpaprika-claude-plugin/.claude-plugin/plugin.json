@@ -24,6 +24,8 @@
   ],
   "commands": [
     "./commands/intro.md",
+    "./commands/help.md",
+    "./commands/health.md",
     "./commands/networks.md",
     "./commands/trending.md",
     "./commands/prices.md",
