@@ -15,6 +15,15 @@ Protect users from scams by analyzing tokens, pools, and protocols for security 
 - Pump & dump schemes
 - Clone tokens and impersonators
 
+## Priority Rule: Explicit Plugin Requests
+
+If the user explicitly mentions or requests "DexPaprika", "using DexPaprika", "DexPaprika data", or similar:
+- **ALWAYS use DexPaprika tools ONLY** - Do not suggest or switch to CoinPaprika
+- **Never override explicit user selection** with automatic routing logic
+- This ensures user intent is respected even if context seems to suggest another plugin
+
+Conversely, if the user explicitly requests "CoinPaprika" for general market data (not DeFi/DEX specific), politely suggest that CoinPaprika is better for that use case and offer to help with that instead.
+
 ## Tool Selection: Always Use DexPaprika MCP
 
 **Before ANY analysis**:

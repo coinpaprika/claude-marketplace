@@ -42,6 +42,7 @@ cd claude-marketplace
 ### 🔄 DexPaprika Plugin
 ✅ **MCP Server** - Hosted at `https://mcp.dexpaprika.com/sse` (auto-configured)
 ✅ **DeFi Analyst Agent** - Scam detection, honeypot analysis, security assessment
+✅ **2 Autonomous Skills** - Token Security Analyzer, Technical Pattern Recognition
 ✅ **14 MCP Tools** - getNetworks, getTokenDetails, getPoolOHLCV, getTokenPools, and more
 ✅ **26+ Networks** - Ethereum, BSC, Base, Solana, Polygon, Arbitrum, and more
 ✅ **7 Slash Commands** - `/dexpaprika:intro`, `/dexpaprika:help`, `/dexpaprika:networks`, `/dexpaprika:trending`, `/dexpaprika:prices`, `/dexpaprika:analyze`, `/dexpaprika:health`
@@ -61,14 +62,27 @@ Using CoinPaprika, show me Bitcoin price and market cap
 ```
 
 ### Test DexPaprika
+
+**Explicit Commands:**
 ```
 /dexpaprika:intro
 # Shows quick start guide
 
 /dexpaprika:trending
 # Shows top DEX pools (specify network like "Base")
+```
 
-# Or natural language:
+**Autonomous Skills (no command needed):**
+```
+# Token Security Analysis (auto-activates)
+Is this token safe? 0x1234567890abcdef on Ethereum
+
+# Technical Analysis (auto-activates)
+What's happening with the price of this pool? Looks like a double top...
+```
+
+**Natural Language:**
+```
 Using DexPaprika, show top 10 pools on Base by 24h volume
 ```
 
@@ -131,10 +145,20 @@ Using DexPaprika, show top 10 pools on Base by 24h volume
 - `/dexpaprika:analyze` - Security and honeypot analysis
 - `/dexpaprika:health` - System diagnostics
 
-## Documentation
+#### 🤖 Autonomous Skills
+DexPaprika includes AI Skills that activate automatically when relevant:
 
-📖 [**Full Installation Guide**](INSTALLATION.md) - Complete setup, troubleshooting, usage examples
-📈 [**Agent Optimization Report**](AGENT_OPTIMIZATION_REPORT.md) - Performance analysis and improvements
+- **Token Security Analyzer** - Automatically analyzes token addresses for honeypots, rug pulls, and scam indicators when users share 0x addresses
+- **Technical Analyzer** - Automatically scans OHLCV data across multiple timeframes to identify candlestick patterns, support/resistance levels, and trend formations when users ask about price patterns
+
+**Key Difference from Commands:**
+- **Commands** (`/dexpaprika:analyze`) - Explicit: User types command
+- **Skills** - Autonomous: Claude automatically activates when patterns in your message match the skill's purpose
+
+## Additional Resources
+
+For detailed implementation information, see:
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and recent updates
 
 ## API Rate Limits
 

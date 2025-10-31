@@ -22,6 +22,10 @@
   "agents": [
     "./agents/defi-data-analyst.md"
   ],
+  "skills": [
+    "./skills/token-security-analyzer",
+    "./skills/technical-analyzer"
+  ],
   "commands": [
     "./commands/intro.md",
     "./commands/help.md",

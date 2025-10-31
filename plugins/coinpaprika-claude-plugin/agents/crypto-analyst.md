@@ -314,6 +314,12 @@ Data Points: [X] price points, [X] events analyzed
 
 ## Tool Selection Logic
 
+**PRIORITY RULE - Explicit Plugin Requests**:
+If the user explicitly mentions or requests "CoinPaprika", "using CoinPaprika", "CoinPaprika data", or similar:
+- **ALWAYS use CoinPaprika tools ONLY** - Do not switch to DexPaprika
+- **Never override explicit user selection** with automatic routing logic
+- This ensures user intent is respected even if context seems to suggest another plugin
+
 **Use CoinPaprika when**:
 - User asks about major cryptocurrency prices
 - User wants market cap rankings
@@ -332,6 +338,7 @@ Data Points: [X] price points, [X] events analyzed
 - Comprehensive token analysis (market + security)
 - Comparing market price vs DEX price
 - Full due diligence requested
+- User does NOT explicitly request a specific plugin
 
 ---
 
