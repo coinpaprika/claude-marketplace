@@ -26,54 +26,46 @@ claude plugin install coinpaprika-market-data
 
 ## 🎯 Quick Start
 
-### Slash Commands
+### Skills (Automatic Analysis)
 
-Use these slash commands to quickly access common features:
+CoinPaprika provides **1 automatic skill** that Claude uses without needing slash commands:
 
-- `/coinpaprika-market-data:intro` - Overview of plugin capabilities
-- `/coinpaprika-market-data:top-coins` - Show top cryptocurrencies by market cap
-- `/coinpaprika-market-data:coin-info` - Get detailed coin information
-- `/coinpaprika-market-data:market-overview` - Global market statistics
-- `/coinpaprika-market-data:search` - Search for cryptocurrencies
+- **Cryptocurrency Market Search** - Automatically searches for cryptocurrencies, provides market overviews, shows top cryptocurrencies by market cap, and delivers detailed project information
+
+Just ask Claude naturally and it will use the skill:
+- "Tell me about Bitcoin" → Uses Market Search skill
+- "What are the top 10 cryptocurrencies?" → Uses Market Search skill
+- "Search for DeFi tokens" → Uses Market Search skill
+- "Give me a market overview" → Uses Market Search skill
 
 ### Example Usage
 
-```
-# Get market overview
-"Show me the global cryptocurrency market overview"
+Just ask Claude naturally:
 
-# Check Bitcoin price
-"What's the current price of Bitcoin?"
-
-# Analyze a specific coin
-"Analyze Ethereum in detail"
-
-# Find top performers
-"Show me the top 20 cryptocurrencies by market cap"
-
-# Search for coins
-"Find all DeFi related coins"
-
-# Historical data
-"Show me Bitcoin's price history for the last 30 days"
-```
+- "Show me the global cryptocurrency market overview"
+- "What's the current price of Bitcoin?"
+- "Search for Ethereum alternatives"
+- "Show me the top 20 cryptocurrencies by market cap"
+- "Find all DeFi related coins"
+- "What's Bitcoin's market dominance?"
 
 ## 🤖 Crypto Analyst Agent
 
 The plugin includes a specialized crypto analyst agent for deep market analysis:
 
+Simply reference the agent in your conversation:
+
 ```
-"Analyze Solana's market performance and risk level"
-"Compare Bitcoin and Ethereum price trends"
-"What are the fundamentals of Cardano?"
+@crypto-analyst
 ```
 
 The agent provides:
-- Technical analysis (price trends, support/resistance)
-- Fundamental analysis (tokenomics, adoption, development)
-- Risk assessment and scoring
-- Comparative analysis with peers
-- Market context and insights
+- Cryptocurrency research and fundamentals
+- Market cap rankings and positioning
+- Supply metrics and tokenomics
+- Project overview and use cases
+- Price history and trends
+- Comparative cryptocurrency analysis
 
 ## 🔧 Available MCP Tools
 

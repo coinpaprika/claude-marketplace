@@ -24,16 +24,9 @@
   ],
   "skills": [
     "./skills/token-security-analyzer",
-    "./skills/technical-analyzer"
-  ],
-  "commands": [
-    "./commands/intro.md",
-    "./commands/help.md",
-    "./commands/health.md",
-    "./commands/networks.md",
-    "./commands/trending.md",
-    "./commands/prices.md",
-    "./commands/analyze.md"
+    "./skills/technical-analyzer",
+    "./skills/batch-token-price-lookup",
+    "./skills/trending-pools-analyzer"
   ],
   "mcpServers": {
     "dexpaprika": {

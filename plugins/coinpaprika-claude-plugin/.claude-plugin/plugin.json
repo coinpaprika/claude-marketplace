@@ -24,14 +24,8 @@
   "agents": [
     "./agents/crypto-analyst.md"
   ],
-  "commands": [
-    "./commands/intro.md",
-    "./commands/help.md",
-    "./commands/health.md",
-    "./commands/top.md",
-    "./commands/info.md",
-    "./commands/overview.md",
-    "./commands/search.md"
+  "skills": [
+    "./skills/crypto-market-search"
   ],
   "mcpServers": {
     "coinpaprika": {

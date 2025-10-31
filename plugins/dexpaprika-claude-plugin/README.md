@@ -56,33 +56,34 @@ If you see "✓ Connected", the installation was successful!
 
 ## Quick Start
 
-### First Steps
+### Skills (Automatic Analysis)
 
-**Start by running the intro command** to see comprehensive guidance:
+DexPaprika provides **4 automatic skills** that Claude uses without needing slash commands:
 
-```bash
-/dexpaprika:intro
-```
+1. **Token Security Analyzer** - Automatically analyzes tokens for honeypots, scams, and security risks
+2. **Technical Analyzer** - Analyzes OHLCV data for candlestick patterns and technical indicators
+3. **Batch Token Price Lookup** - Fetches current prices for multiple tokens
+4. **Trending Pools Analyzer** - Shows top pools ranked by 24-hour trading volume
 
-Or call `getCapabilities` to learn about workflows, network synonyms, and best practices.
-
-### Available Commands
-
-- `/dexpaprika:intro` - Overview of DexPaprika capabilities and quick start guide
-- `/dexpaprika:networks` - List all 26+ supported blockchain networks
-- `/dexpaprika:trending` - Show top pools by 24h volume on a network
-- `/dexpaprika:prices` - Get batched prices for multiple tokens (max 10)
-- `/dexpaprika:analyze` - Analyze a token for security risks and honeypots
+Just ask Claude naturally and it will use the appropriate skill:
+- "Is this token safe?" → Uses Token Security Analyzer
+- "Analyze the 4h chart" → Uses Technical Analyzer
+- "What's the price of USDC and ETH?" → Uses Batch Token Price Lookup
+- "What's trending on Solana?" → Uses Trending Pools Analyzer
 
 ### Using the Agent
 
-The plugin includes a DeFi data analyst agent that you can invoke with:
+For comprehensive DeFi analysis, use the DeFi data analyst agent:
 
 ```
 @defi-data-analyst
 ```
 
-Use it for comprehensive token analysis, scam detection, and market intelligence.
+The agent specializes in:
+- Honeypot detection and scam identification
+- Risk assessment and rug pull analysis
+- Market manipulation detection
+- Token security evaluation
 
 ## Usage
 
