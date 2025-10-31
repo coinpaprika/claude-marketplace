@@ -1,0 +1,30 @@
+# Local Claude Code settings (development only)
+.claude/settings.local.json
+.claude/hooks/
+.claude/mcp-custom/
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build/dist
+dist/
+build/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
