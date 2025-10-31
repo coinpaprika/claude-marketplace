@@ -32,6 +32,14 @@
     "dexpaprika": {
       "type": "sse",
       "url": "https://mcp.dexpaprika.com/sse"
+    },
+    "dexpaprika-streamable-http": {
+      "type": "http",
+      "url": "https://mcp.dexpaprika.com/streamable-http"
+    },
+    "dexpaprika-json-rpc": {
+      "type": "json-rpc",
+      "url": "https://mcp.dexpaprika.com/json-rpc"
     }
   }
 }

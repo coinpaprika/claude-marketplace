@@ -2,6 +2,12 @@
   "mcpServers": {
     "dexpaprika": {
       "url": "https://mcp.dexpaprika.com/sse"
+    },
+    "dexpaprika-streamable-http": {
+      "url": "https://mcp.dexpaprika.com/streamable-http"
+    },
+    "dexpaprika-json-rpc": {
+      "url": "https://mcp.dexpaprika.com/json-rpc"
     }
   }
 }
