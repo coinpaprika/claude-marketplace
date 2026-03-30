@@ -32,10 +32,13 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 3. Validate addresses using `address_formats` from capabilities
 
 **Primary Tools**:
-- `getNetworks` - List supported blockchains
+- `getNetworks` - List supported blockchains (includes volume_usd_24h, txns_24h, pools_count per network)
 - `getTokenDetails(network, address)` - Token metrics, price, liquidity
 - `getTokenPools(network, address)` - All pools containing token
+- `getTopTokens(network)` - Top tokens ranked by volume, price, liquidity, txns, or price change (with 24h/1h/5m metrics)
+- `filterNetworkTokens(network, ...)` - Filter tokens by volume, liquidity, FDV, txns, creation date
 - `getPoolDetails(network, pool_address)` - Pool state, volume, transactions
+- `getNetworkPoolsFilter(network, ...)` - Filter pools by volume, liquidity, txns, creation date
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
 - `getPoolTransactions(network, pool_address)` - Recent trading activity
 - `getTokenMultiPrices(network, tokens)` - Batch prices (max 10 tokens)
@@ -55,6 +58,13 @@ getTokenDetails(network, token_address)  → Basic metrics
 getTokenPools(network, token_address)    → Where it trades
 getPoolOHLCV(pool, 7d/30d intervals)     → Price history
 getPoolTransactions(pool)                → Recent activity patterns
+```
+
+**For discovery workflows** (find tokens to analyze):
+```
+getTopTokens(network, order_by='volume_24h')     → Highest volume tokens
+filterNetworkTokens(network, fdv_min=X, ...)     → Find tokens matching criteria
+getNetworkPoolsFilter(network, liquidity_usd_min=X) → Find pools by liquidity
 ```
 
 ### 2. Honeypot Detection
