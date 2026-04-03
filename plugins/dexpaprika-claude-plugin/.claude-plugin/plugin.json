@@ -1,7 +1,7 @@
 {
   "name": "dexpaprika",
-  "version": "1.0.0",
-  "description": "Access comprehensive DeFi data from DexPaprika including DEXes, liquidity pools, tokens, and trading information across 26+ blockchains",
+  "version": "2.0.0",
+  "description": "Access comprehensive DeFi data from DexPaprika: DEXes, liquidity pools, tokens, and trading across 34+ blockchains. Free, no API key needed.",
   "author": {
     "name": "CoinPaprika"
   },
@@ -17,7 +17,8 @@
     "blockchain",
     "cryptocurrency",
     "trading",
-    "analytics"
+    "analytics",
+    "free-api"
   ],
   "agents": [
     "./agents/defi-data-analyst.md"

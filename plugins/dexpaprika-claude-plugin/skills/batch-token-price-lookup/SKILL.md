@@ -1,3 +1,8 @@
+---
+name: batch-token-price-lookup
+description: Fetch current prices for multiple tokens on any blockchain network. Activates when users ask about token prices, price comparisons, or batch price lookups across 34+ chains.
+---
+
 # Batch Token Price Lookup Skill
 
 ## Description
@@ -139,15 +144,15 @@ Data from: DexPaprika | 2025-10-31 14:30 UTC
 ```
 
 ### Scenario 3: New Token Price
-User: "What's the price of this token? 0xabc123... on Solana"
+User: "What's the price of this token? JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN on Solana"
 
 Response:
 ```
 CURRENT PRICE - Solana
 ═══════════════════════════════════════════════════════════
 
-Token: NewToken (NEW)
-Address: 0xabc123...
+Token: Jupiter (JUP)
+Address: JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN
 Current Price: $0.0234
 24h Change: +120% (high volatility)
 24h Volume: $450K

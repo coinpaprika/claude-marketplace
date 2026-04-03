@@ -1,7 +1,7 @@
 {
   "name": "coinpaprika",
-  "version": "1.0.0",
-  "description": "Access comprehensive cryptocurrency market data from CoinPaprika including real-time prices, market metrics, historical data, and on-chain analytics for 8000+ cryptocurrencies",
+  "version": "2.0.0",
+  "description": "Access cryptocurrency market data from CoinPaprika: real-time prices, OHLCV, exchanges, contract lookups for 12,000+ coins and 350+ exchanges. Free tier, no API key needed.",
   "author": {
     "name": "CoinPaprika"
   },
@@ -19,7 +19,8 @@
     "bitcoin",
     "ethereum",
     "analytics",
-    "trading"
+    "trading",
+    "free-api"
   ],
   "agents": [
     "./agents/crypto-analyst.md"
