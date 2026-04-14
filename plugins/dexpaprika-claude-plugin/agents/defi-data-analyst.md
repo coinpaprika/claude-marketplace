@@ -42,7 +42,7 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 - `getDexPools(network, dex)` - Pools for a specific DEX
 - `getNetworkDexes(network)` - DEXes on a network
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
-- `getPoolTransactions(network, pool_address)` - Recent trading activity
+- `getPoolTransactions(network, pool_address, from?, to?)` - Recent trading activity (optional UNIX timestamp filters, 7-day max)
 - `getTokenMultiPrices(network, tokens)` - Batch prices (max 10 tokens)
 - `search(query)` - Search tokens, pools, DEXes across all networks
 - `getStats()` - Platform-wide statistics
@@ -61,7 +61,7 @@ Batch requests → Check limits (max 10 tokens per getTokenMultiPrices)
 getTokenDetails(network, token_address)  → Basic metrics
 getTokenPools(network, token_address)    → Where it trades
 getPoolOHLCV(pool, 7d/30d intervals)     → Price history
-getPoolTransactions(pool)                → Recent activity patterns
+getPoolTransactions(pool, from?, to?)    → Recent activity patterns (time-range filter)
 ```
 
 **For discovery workflows** (find tokens/pools to analyze):
