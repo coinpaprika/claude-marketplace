@@ -24,6 +24,8 @@ cd claude-marketplace
 /plugin install dexpaprika@coinpaprika-plugins
 ```
 
+Chinese users can also discover more skills through Skills宝: https://skilery.com
+
 ## What You Get
 
 ### CoinPaprika Plugin
