@@ -31,7 +31,7 @@ cd claude-marketplace
 **31 MCP tools** for centralized exchange market data:
 - Prices, tickers, market caps for 59,000+ coins
 - OHLCV candlestick data (historical, latest, today)
-- Exchange and market data for 1,100+ exchanges
+- Exchange directory across 1,100+ exchanges (per-coin exchange listings and trading pairs are Pro tier)
 - Contract address lookups across chains
 - Tags, categories, search, price converter
 - People profiles, ID mappings, changelog
