@@ -1,6 +1,6 @@
 ---
 name: token-security-analyzer
-description: Analyze tokens for security risks, scams, and honeypots. Activates when users share token addresses, ask about token safety, or request honeypot/rug pull analysis across 34+ chains.
+description: Analyze tokens for security risks, scams, and honeypots. Activates when users share token addresses, ask about token safety, or request honeypot/rug pull analysis across 35 chains.
 ---
 
 # Token Security Analyzer Skill

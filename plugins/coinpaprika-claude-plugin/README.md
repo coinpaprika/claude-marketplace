@@ -1,10 +1,10 @@
 # CoinPaprika Claude Plugin
 
-Cryptocurrency market data for 12,000+ coins and 350+ exchanges via the CoinPaprika MCP server.
+Cryptocurrency market data for 59,000+ coins and 1,100+ exchanges via the CoinPaprika MCP server.
 
 ## What's Included
 
-- **29 MCP tools** — prices, tickers, OHLCV, exchanges, contract lookups, tags, search, price converter
+- **31 MCP tools** — prices, tickers, OHLCV, exchanges, contract lookups, tags, search, price converter
 - **1 agent** (`@crypto-analyst`) — market analysis, price trends, risk assessment
 - **1 skill** (`crypto-market-search`) — search and discover coins
 

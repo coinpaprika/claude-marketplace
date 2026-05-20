@@ -1,6 +1,6 @@
 ---
 name: trending-pools-analyzer
-description: Analyze top performing liquidity pools on any blockchain network ranked by 24h trading volume. Activates when users ask about trending tokens, hot pools, or volume leaders across 34+ chains.
+description: Analyze top performing liquidity pools on any blockchain network ranked by 24h trading volume. Activates when users ask about trending tokens, hot pools, or volume leaders across 35 chains.
 ---
 
 # Trending Pools Analyzer Skill

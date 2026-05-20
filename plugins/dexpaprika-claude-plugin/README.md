@@ -1,10 +1,10 @@
 # DexPaprika Claude Plugin
 
-DeFi data across 34+ blockchains, 30M+ liquidity pools, and 27M+ tokens via the DexPaprika MCP server.
+DeFi data across 35 blockchains, 33M+ liquidity pools, and 30M+ tokens via the DexPaprika MCP server.
 
 ## What's Included
 
-- **14 MCP tools** — tokens, pools, OHLCV, transactions, search, batch prices
+- **17 MCP tools** — tokens, pools, OHLCV, transactions, search, batch prices
 - **1 agent** (`@defi-data-analyst`) — DeFi security analysis, honeypot detection, scam identification
 - **4 skills** — Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
@@ -13,7 +13,7 @@ DeFi data across 34+ blockchains, 30M+ liquidity pools, and 27M+ tokens via the 
 | Tool | Description |
 |------|-------------|
 | `getCapabilities` | Server capabilities, workflow examples, network synonyms |
-| `getNetworks` | List 34+ supported blockchains |
+| `getNetworks` | List 35 supported blockchains |
 | `getStats` | Platform-wide statistics |
 | `getNetworkDexes` | DEXes on a network |
 | `getNetworkPools` | Top pools on a network (sortable by volume, price, txns) |

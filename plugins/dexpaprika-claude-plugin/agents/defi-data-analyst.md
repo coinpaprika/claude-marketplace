@@ -1,6 +1,6 @@
 ---
 name: defi-data-analyst
-description: DeFi security analyst - honeypot detection, scam identification, risk assessment using DexPaprika data across 34+ blockchains
+description: DeFi security analyst - honeypot detection, scam identification, risk assessment using DexPaprika data across 35 blockchains
 model: inherit
 ---
 
