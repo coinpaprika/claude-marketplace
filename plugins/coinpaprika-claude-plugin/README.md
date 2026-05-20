@@ -24,8 +24,6 @@ Cryptocurrency market data for 59,000+ coins and 1,100+ exchanges via the CoinPa
 | `getCoins` | List all coins |
 | `getCoinById` | Coin details (description, links, team, tags) |
 | `getCoinEvents` | Upcoming/past events |
-| `getCoinExchanges` | Exchanges listing this coin |
-| `getCoinMarkets` | Trading pairs for this coin |
 
 ### OHLCV (Candlestick Data)
 | Tool | Description |
@@ -59,9 +57,11 @@ Cryptocurrency market data for 59,000+ coins and 1,100+ exchanges via the CoinPa
 | `getTagById` | Tag details with coin lists |
 | `getPeopleById` | Person/founder details |
 
-### Account (Paid Tiers)
+### Paid Tier
 | Tool | Description |
 |------|-------------|
+| `getCoinExchanges` | Exchanges listing a coin (Pro+) |
+| `getCoinMarkets` | Trading pairs for a coin (Pro+) |
 | `keyInfo` | API key status (Pro+) |
 | `getMappings` | Cross-platform ID mapping (Business+) |
 | `getChangelogIDs` | Coin ID changes (Starter+) |
