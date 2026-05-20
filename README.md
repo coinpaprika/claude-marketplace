@@ -2,8 +2,8 @@
 
 Official Claude Code plugins for **CoinPaprika** and **DexPaprika** — free crypto market data and DeFi analytics.
 
-- **CoinPaprika**: 12,000+ coins, 350+ exchanges, 29 MCP tools
-- **DexPaprika**: 34+ blockchains, 30M+ pools, 14 MCP tools
+- **CoinPaprika**: 59,000+ coins, 1,100+ exchanges, 31 MCP tools
+- **DexPaprika**: 35 blockchains, 33M+ pools, 17 MCP tools
 
 Both APIs are free with no API key required.
 
@@ -28,10 +28,10 @@ cd claude-marketplace
 
 ### CoinPaprika Plugin
 
-**29 MCP tools** for centralized exchange market data:
-- Prices, tickers, market caps for 12,000+ coins
+**31 MCP tools** for centralized exchange market data:
+- Prices, tickers, market caps for 59,000+ coins
 - OHLCV candlestick data (historical, latest, today)
-- Exchange and market data for 350+ exchanges
+- Exchange and market data for 1,100+ exchanges
 - Contract address lookups across chains
 - Tags, categories, search, price converter
 - People profiles, ID mappings, changelog
@@ -44,8 +44,8 @@ cd claude-marketplace
 
 ### DexPaprika Plugin
 
-**14 MCP tools** for decentralized exchange data:
-- Token prices and details across 34+ blockchains
+**17 MCP tools** for decentralized exchange data:
+- Token prices and details across 35 blockchains
 - Liquidity pool discovery, filtering, and details
 - OHLCV charts for any pool
 - Pool transactions and trading activity
@@ -82,7 +82,7 @@ claude-marketplace/
 ├── plugins/
 │   ├── coinpaprika-claude-plugin/
 │   │   ├── .claude-plugin/
-│   │   │   └── plugin.json                 # Plugin manifest (29 MCP tools)
+│   │   │   └── plugin.json                 # Plugin manifest (31 MCP tools)
 │   │   ├── .mcp-hosted.json                # MCP server connection
 │   │   ├── agents/
 │   │   │   └── crypto-analyst.md           # Market analyst agent
@@ -92,7 +92,7 @@ claude-marketplace/
 │   │   └── README.md
 │   └── dexpaprika-claude-plugin/
 │       ├── .claude-plugin/
-│       │   └── plugin.json                 # Plugin manifest (14 MCP tools)
+│       │   └── plugin.json                 # Plugin manifest (17 MCP tools)
 │       ├── agents/
 │       │   └── defi-data-analyst.md        # DeFi security agent
 │       ├── skills/

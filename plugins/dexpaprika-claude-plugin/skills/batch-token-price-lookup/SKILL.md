@@ -1,6 +1,6 @@
 ---
 name: batch-token-price-lookup
-description: Fetch current prices for multiple tokens on any blockchain network. Activates when users ask about token prices, price comparisons, or batch price lookups across 34+ chains.
+description: Fetch current prices for multiple tokens on any blockchain network. Activates when users ask about token prices, price comparisons, or batch price lookups across 35 chains.
 ---
 
 # Batch Token Price Lookup Skill

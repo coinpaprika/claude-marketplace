@@ -5,7 +5,7 @@ description: Search and analyze cryptocurrency market data using CoinPaprika. Ac
 
 ## Purpose
 
-Search, discover, and analyze cryptocurrency market data across 12,000+ coins and 350+ exchanges using CoinPaprika MCP tools.
+Search, discover, and analyze cryptocurrency market data across 59,000+ coins and 1,100+ exchanges using CoinPaprika MCP tools.
 
 ## Available Tools
 
