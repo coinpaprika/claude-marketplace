@@ -31,14 +31,15 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 2. Normalize network names using `network_synonyms` from capabilities
 3. Validate addresses using `address_formats` from capabilities
 
-**Primary Tools (14 total)**:
+**Primary Tools (15 total)**:
 - `getCapabilities()` - Load network synonyms, validation rules, workflow examples
 - `getNetworks()` - List 34+ supported blockchains (volume, txns, pool counts)
 - `getTokenDetails(network, token_address)` - Token metrics, price, liquidity
 - `getTokenPools(network, token_address)` - All pools containing a token
 - `getPoolDetails(network, pool_address)` - Pool state, volume, transactions
-- `getNetworkPools(network, order_by, sort, limit)` - Top pools on a network
-- `getNetworkPoolsFilter(network, volume_24h_min, txns_24h_min, ...)` - Filter pools by criteria
+- `getNetworkPools(network, sort_by, sort_dir, limit)` - Top pools on a network
+- `getNetworkPoolsFilter(network, volume_24h_min, txns_24h_min, ...)` - Filter pools by criteria (single network)
+- `searchPools(sort_by, sort_dir, price_usd_min/max, liquidity_usd_min/max, volume_24h_min/max, dex_name, created_after/before, detailed, limit, cursor, ...)` - Advanced pool search across ALL networks at once, with cursor pagination
 - `getDexPools(network, dex)` - Pools for a specific DEX
 - `getNetworkDexes(network)` - DEXes on a network
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
@@ -66,11 +67,15 @@ getPoolTransactions(pool, from?, to?)    → Recent activity patterns (time-rang
 
 **For discovery workflows** (find tokens/pools to analyze):
 ```
-getNetworkPools(network, order_by='volume_usd', limit=20) → Top pools by volume
-getNetworkPoolsFilter(network, volume_24h_min=X)          → Filter pools by criteria
-search(query='token name or address')                      → Find across all networks
-getDexPools(network, dex='uniswap_v3')                    → Pools on specific DEX
+getNetworkPools(network, sort_by='volume_usd_24h', limit=20)        → Top pools by volume (one network)
+getNetworkPoolsFilter(network, volume_24h_min=X)                    → Filter pools by criteria (one network)
+searchPools(price_usd_min=0.5, dex_name='uniswap_v3', sort_by='liquidity_usd', detailed=True)
+                                                                     → Advanced filter across ALL networks, with price/liquidity/volume/dex bounds + cursor paging
+search(query='token name or address')                              → Find a known token/pool by name or address
+getDexPools(network, dex='uniswap_v3')                             → Pools on specific DEX
 ```
+
+Use `searchPools` when the universe is "every chain" (e.g. hunting low-price, low-liquidity pools on a given DEX network-wide); use `getNetworkPoolsFilter` when scoped to one network. Pass `cursor` from the previous response's `next_cursor` to page through results.
 
 ### 2. Honeypot Detection
 **Red Flags**:

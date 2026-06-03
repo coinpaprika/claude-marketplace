@@ -1,7 +1,7 @@
 {
   "name": "dexpaprika",
   "version": "2.0.0",
-  "description": "Access comprehensive DeFi data from DexPaprika: DEXes, liquidity pools, tokens, and trading across 35 blockchains. Free, no API key needed.",
+  "description": "Access comprehensive DeFi data from DexPaprika: DEXes, liquidity pools, tokens, and trading across 35 blockchains. Includes cross-network advanced pool search with price, liquidity, volume, and DEX filters. Free, no API key needed.",
   "author": {
     "name": "CoinPaprika"
   },
