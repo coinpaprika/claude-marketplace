@@ -1,6 +1,6 @@
 # CoinPaprika Claude Plugin
 
-Cryptocurrency market data for 59,000+ coins and 1,100+ exchanges via the CoinPaprika MCP server.
+Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via the CoinPaprika MCP server.
 
 ## What's Included
 

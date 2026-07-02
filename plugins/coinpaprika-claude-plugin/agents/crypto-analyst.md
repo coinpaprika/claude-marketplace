@@ -1,6 +1,6 @@
 ---
 name: crypto-analyst
-description: Cryptocurrency market analyst - price trends, fundamentals, risk assessment using CoinPaprika data for 59,000+ coins and 1,100+ exchanges
+description: Cryptocurrency market analyst - price trends, fundamentals, risk assessment using CoinPaprika data for 12,000+ cryptocurrencies and 350+ exchanges
 model: inherit
 ---
 

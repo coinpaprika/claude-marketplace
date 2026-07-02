@@ -2,8 +2,8 @@
 
 Official Claude Code plugins for **CoinPaprika** and **DexPaprika** — free crypto market data and DeFi analytics.
 
-- **CoinPaprika**: 59,000+ coins, 1,100+ exchanges, 31 MCP tools
-- **DexPaprika**: 35 blockchains, 33M+ pools, 17 MCP tools
+- **CoinPaprika**: 12,000+ cryptocurrencies, 350+ exchanges, 31 MCP tools
+- **DexPaprika**: 35 blockchains, 34M+ pools, 17 MCP tools
 
 Both APIs are free with no API key required.
 
@@ -29,9 +29,9 @@ cd claude-marketplace
 ### CoinPaprika Plugin
 
 **31 MCP tools** for centralized exchange market data:
-- Prices, tickers, market caps for 59,000+ coins
+- Prices, tickers, market caps for 12,000+ cryptocurrencies
 - OHLCV candlestick data (historical, latest, today)
-- Exchange directory across 1,100+ exchanges (per-coin exchange listings and trading pairs are Pro tier)
+- Exchange directory across 350+ exchanges (per-coin exchange listings and trading pairs are Pro tier)
 - Contract address lookups across chains
 - Tags, categories, search, price converter
 - People profiles, ID mappings, changelog
@@ -57,6 +57,26 @@ cd claude-marketplace
 **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
 **Free tier**: 10,000 requests/day, no API key needed.
+
+## Updating
+
+Installed plugins are version-pinned snapshots. Claude Code copies plugin files at install time and only re-copies them when the plugin's version string changes. Pulling this repo or pushing new commits does nothing for users who already installed a plugin.
+
+**For contributors**: every change to plugin content (manifests, READMEs, agents, skills) must ship with a version bump in two places, or installed users never receive it:
+
+1. `plugins/<plugin>/.claude-plugin/plugin.json` (`version`)
+2. `.claude-plugin/marketplace.json` (the matching plugin entry's `version`)
+
+**For users**: marketplace clones are not auto-fetched either, so refresh in two steps:
+
+```bash
+# In Claude Code
+/plugin marketplace update coinpaprika-plugins
+/plugin update coinpaprika@coinpaprika-plugins
+/plugin update dexpaprika@coinpaprika-plugins
+```
+
+Then restart Claude Code to apply.
 
 ## Quick Test
 
