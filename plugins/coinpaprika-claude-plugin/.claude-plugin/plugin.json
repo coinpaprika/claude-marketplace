@@ -1,7 +1,7 @@
 {
   "name": "coinpaprika",
-  "version": "2.0.0",
-  "description": "Access cryptocurrency market data from CoinPaprika: real-time prices, OHLCV, exchanges, contract lookups for 59,000+ coins and 1,100+ exchanges. Free tier, no API key needed.",
+  "version": "2.0.1",
+  "description": "Access cryptocurrency market data from CoinPaprika: real-time prices, OHLCV, exchanges, contract lookups for 12,000+ cryptocurrencies and 350+ exchanges. Free tier, no API key needed.",
   "author": {
     "name": "CoinPaprika"
   },
