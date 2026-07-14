@@ -3,7 +3,7 @@
 Official Claude Code plugins for **CoinPaprika** and **DexPaprika** — free crypto market data and DeFi analytics.
 
 - **CoinPaprika**: 12,000+ cryptocurrencies, 350+ exchanges, 31 MCP tools
-- **DexPaprika**: 35 blockchains, 34M+ pools, 17 MCP tools
+- **DexPaprika**: 36 blockchains, 36M+ pools, 17 MCP tools
 
 Both APIs are free with no API key required.
 
@@ -45,7 +45,7 @@ cd claude-marketplace
 ### DexPaprika Plugin
 
 **17 MCP tools** for decentralized exchange data:
-- Token prices and details across 35 blockchains
+- Token prices and details across 36 blockchains
 - Liquidity pool discovery, filtering, and details
 - OHLCV charts for any pool
 - Pool transactions and trading activity
