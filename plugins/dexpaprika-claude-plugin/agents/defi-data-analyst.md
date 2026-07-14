@@ -1,6 +1,6 @@
 ---
 name: defi-data-analyst
-description: DeFi security analyst - honeypot detection, scam identification, risk assessment using DexPaprika data across 35 blockchains
+description: DeFi security analyst - honeypot detection, scam identification, risk assessment using DexPaprika data across 36 blockchains
 model: inherit
 ---
 
@@ -33,7 +33,7 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 
 **Primary Tools (14 total)**:
 - `getCapabilities()` - Load network synonyms, validation rules, workflow examples
-- `getNetworks()` - List 35 supported blockchains (volume, txns, pool counts)
+- `getNetworks()` - List every supported blockchain (volume, txns, pool counts)
 - `getTokenDetails(network, token_address)` - Token metrics, price, liquidity
 - `getTokenPools(network, token_address)` - All pools containing a token
 - `getPoolDetails(network, pool_address)` - Pool state, volume, transactions

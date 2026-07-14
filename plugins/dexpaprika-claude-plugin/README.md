@@ -1,6 +1,6 @@
 # DexPaprika Claude Plugin
 
-DeFi data across 35 blockchains, 34M+ liquidity pools, and 32M+ tokens via the DexPaprika MCP server.
+DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the DexPaprika MCP server.
 
 ## What's Included
 
@@ -13,7 +13,7 @@ DeFi data across 35 blockchains, 34M+ liquidity pools, and 32M+ tokens via the D
 | Tool | Description |
 |------|-------------|
 | `getCapabilities` | Server capabilities, workflow examples, network synonyms |
-| `getNetworks` | List 35 supported blockchains |
+| `getNetworks` | List every supported blockchain |
 | `getStats` | Platform-wide statistics |
 | `getNetworkDexes` | DEXes on a network |
 | `getNetworkPools` | Top pools on a network (sortable by volume, price, txns) |
