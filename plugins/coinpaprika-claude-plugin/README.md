@@ -87,3 +87,7 @@ Use `search` or `resolveId` if unsure of the correct ID.
 - [LLM Docs](https://docs.coinpaprika.com/llms-full.txt)
 - [CLI](https://github.com/coinpaprika/coinpaprika-cli)
 - [API Pricing](https://coinpaprika.com/api/pricing)
+
+## Privacy
+
+This plugin connects to the hosted CoinPaprika MCP server at `mcp.coinpaprika.com`. See the [CoinPaprika privacy policy](https://coinpaprika.com/privacy-policy/) for details on what data is collected, how it is used, and how long it is retained.

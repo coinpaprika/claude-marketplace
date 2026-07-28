@@ -55,3 +55,7 @@ Full list: call `getNetworks()`.
 - [CLI](https://github.com/coinpaprika/dexpaprika-cli)
 - [AI Agents Showcase](https://agents.dexpaprika.com)
 - SDKs: [Go](https://github.com/coinpaprika/dexpaprika-sdk-go) | [Python](https://github.com/coinpaprika/dexpaprika-sdk-python) | [TypeScript](https://github.com/coinpaprika/dexpaprika-sdk-ts) | [PHP](https://github.com/coinpaprika/dexpaprika-sdk-php) | [Rust](https://github.com/coinpaprika/dexpaprika-sdk-rust)
+
+## Privacy
+
+This plugin connects to the hosted DexPaprika MCP server at `mcp.dexpaprika.com`. See the [DexPaprika privacy policy](https://dexpaprika.com/privacy-policy) for details on what data is collected, how it is used, and how long it is retained.
