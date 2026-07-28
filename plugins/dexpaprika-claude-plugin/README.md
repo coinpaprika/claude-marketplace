@@ -38,9 +38,11 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 
 ## Rate Limits
 
-- **Free tier**: 10,000 requests/day, no API key needed
-- **Enterprise**: Unlimited via `api-pro.dexpaprika.com`
-- **Global**: 10 requests/second
+- **Keyless**: 200,000 requests/month per IP, 30/min. No API key needed to start.
+- **Free API key**: 500,000 requests/month, 30/min.
+- **Pro**: 5,000,000 requests/month, 300/min.
+
+See the [rate limits guide](https://docs.dexpaprika.com/knowledge-base/rate-limits) for details.
 
 ## Common Network IDs
 
