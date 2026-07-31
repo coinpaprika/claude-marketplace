@@ -5,7 +5,7 @@
     "name": "CoinPaprika & DexPaprika"
   },
   "metadata": {
-    "description": "Official Claude plugins from CoinPaprika and DexPaprika: crypto market data, DEX analytics, liquidity pools, tokens, OHLCV, and more. Free APIs, no key needed.",
+    "description": "Official Claude plugins from CoinPaprika and DexPaprika: crypto market data, DEX analytics, liquidity pools, tokens, OHLCV, and more. No API key needed to start.",
     "version": "2.0.0",
     "pluginRoot": "plugins"
   },
@@ -13,8 +13,8 @@
     {
       "name": "dexpaprika",
       "source": "./plugins/dexpaprika-claude-plugin",
-      "description": "DeFi data across 36 blockchains: DEXes, liquidity pools, tokens, OHLCV, transactions. 17 MCP tools, 4 skills, 1 agent. Free, no API key.",
-      "version": "2.0.3",
+      "description": "DeFi data across 36 blockchains: DEXes, liquidity pools, tokens, OHLCV, transactions. 17 MCP tools, 4 skills, 1 agent. No API key needed to start.",
+      "version": "2.0.4",
       "author": {
         "name": "CoinPaprika & DexPaprika"
       },
