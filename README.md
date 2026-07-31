@@ -1,11 +1,11 @@
 # CoinPaprika Claude Marketplace
 
-Official Claude Code plugins for **CoinPaprika** and **DexPaprika** — free crypto market data and DeFi analytics.
+Official Claude Code plugins for **CoinPaprika** and **DexPaprika**: crypto market data and DeFi analytics, no API key needed to start.
 
 - **CoinPaprika**: 12,000+ cryptocurrencies, 350+ exchanges, 31 MCP tools
 - **DexPaprika**: 36 blockchains, 36M+ pools, 17 MCP tools
 
-Both APIs are free with no API key required.
+Both APIs work without an API key. Paid plans raise the quotas; see the rate limits below.
 
 ## Quick Start
 
@@ -56,7 +56,7 @@ cd claude-marketplace
 
 **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
-**Free tier**: 10,000 requests/day, no API key needed.
+**No API key needed to start**: 200,000 requests/month, or 500,000 with a free key. Paid plans raise the quota and the per-minute rate; see [pricing](https://dexpaprika.com/pricing).
 
 ## Updating
 
@@ -149,9 +149,9 @@ Using DexPaprika, show me trending pools on Solana
 | API | Free Tier | Auth Required |
 |-----|-----------|---------------|
 | CoinPaprika | 20,000 calls/month | No |
-| DexPaprika | 10,000 requests/day | No |
+| DexPaprika | 200,000 requests/month (500,000 with a free key) | No |
 
-Global rate limit: 10 requests/second per IP.
+Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, DexPaprika 30 requests/minute on the free tiers and 300 on Pro.
 
 ## Resources
 
