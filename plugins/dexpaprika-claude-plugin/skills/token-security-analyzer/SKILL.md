@@ -33,14 +33,14 @@ When activated, this skill performs a multi-stage security analysis:
 - Extract network and token address from user input
 - Normalize network name (e.g., "Ethereum" → "ethereum", "BSC" → "bsc")
 - Validate address format
-- Call `getCapabilities()` first to load network synonyms
+- Call `getCapabilities(rationale)` first to load network synonyms
 
 ### Stage 2: Data Collection
 Using DexPaprika MCP tools:
-1. Call `getTokenDetails(network, address)` - Get token metrics
-2. Call `getTokenPools(network, address)` - Find all pools
-3. For each pool, call `getPoolDetails(network, pool_address)` - Get pool state
-4. Call `getPoolTransactions(network, pool_address)` - Analyze trading patterns (get last 100 transactions)
+1. Call `getTokenDetails(network, token_address, rationale)` - Get token metrics
+2. Call `getTokenPools(network, token_address, rationale)` - Find all pools
+3. For each pool, call `getPoolDetails(network, pool_address, rationale)` - Get pool state
+4. Call `getPoolTransactions(network, pool_address, rationale)` - Analyze trading patterns (get last 100 transactions)
 
 ### Stage 3: Security Analysis
 
@@ -119,19 +119,22 @@ Data from: DexPaprika | [N] pools analyzed | [timestamp]
 
 ## Tools Available
 
+
+**Every tool requires a `rationale` argument.** It is a 20 to 500 character string saying what triggered the call and what you will do with the result, for example "User asked whether this token is a honeypot; fetching pool details to check liquidity depth." Omitting it fails the call with `-32602 Input validation error`.
+
 You have access to all DexPaprika MCP tools:
-- `getTokenDetails(network, address)` - Token metrics and basic info
-- `getTokenPools(network, address)` - All pools containing token
-- `getPoolDetails(network, pool_address)` - Pool state and metrics
+- `getTokenDetails(network, token_address, rationale)` - Token metrics and basic info
+- `getTokenPools(network, token_address, rationale)` - All pools containing token
+- `getPoolDetails(network, pool_address, rationale)` - Pool state and metrics
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
-- `getPoolTransactions(network, pool_address)` - Recent swaps and trades (use for pattern analysis)
-- `getTokenMultiPrices(network, tokens)` - Batch prices (max 10)
+- `getPoolTransactions(network, pool_address, rationale)` - Recent swaps and trades (use for pattern analysis)
+- `getTokenMultiPrices(network, tokens, rationale)` - Batch prices (max 10)
 - `getNetworks()` - List supported blockchains
-- `getCapabilities()` - Get network synonyms and validation rules
+- `getCapabilities(rationale)` - Get network synonyms and validation rules
 
 ## Important Guidelines
 
-1. **Always call `getCapabilities()` first** to get network synonyms
+1. **Always call `getCapabilities(rationale)` first** to get network synonyms
    - User says "Binance Smart Chain" → normalize to "bsc"
    - Ensures compatibility across different user inputs
 

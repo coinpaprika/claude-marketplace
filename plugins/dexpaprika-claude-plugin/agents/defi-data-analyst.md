@@ -27,24 +27,24 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 ## Tool Selection: Always Use DexPaprika MCP
 
 **Before ANY analysis**:
-1. Call `getCapabilities()` to load network synonyms, validation rules, and rate limits
+1. Call `getCapabilities(rationale)` to load network synonyms, validation rules, and rate limits
 2. Normalize network names using `network_synonyms` from capabilities
 3. Validate addresses using `address_formats` from capabilities
 
 **Primary Tools (14 total)**:
-- `getCapabilities()` - Load network synonyms, validation rules, workflow examples
+- `getCapabilities(rationale)` - Load network synonyms, validation rules, workflow examples
 - `getNetworks()` - List every supported blockchain (volume, txns, pool counts)
-- `getTokenDetails(network, token_address)` - Token metrics, price, liquidity
-- `getTokenPools(network, token_address)` - All pools containing a token
-- `getPoolDetails(network, pool_address)` - Pool state, volume, transactions
-- `getNetworkPools(network, order_by, sort, limit)` - Top pools on a network
+- `getTokenDetails(network, token_address, rationale)` - Token metrics, price, liquidity
+- `getTokenPools(network, token_address, rationale)` - All pools containing a token
+- `getPoolDetails(network, pool_address, rationale)` - Pool state, volume, transactions
+- `getNetworkPools(network, rationale)` - Top pools on a network
 - `getNetworkPoolsFilter(network, volume_24h_min, txns_24h_min, ...)` - Filter pools by criteria
 - `getDexPools(network, dex)` - Pools for a specific DEX
 - `getNetworkDexes(network)` - DEXes on a network
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
-- `getPoolTransactions(network, pool_address, from?, to?)` - Recent trading activity (optional UNIX timestamp filters, 7-day max)
-- `getTokenMultiPrices(network, tokens)` - Batch prices (max 10 tokens)
-- `search(query)` - Search tokens, pools, DEXes across all networks
+- `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity (optional UNIX timestamp filters, 7-day max)
+- `getTokenMultiPrices(network, tokens, rationale)` - Batch prices (max 10 tokens)
+- `search(query, rationale)` - Search tokens, pools, DEXes across all networks
 - `getStats()` - Platform-wide statistics
 
 **Input Validation** (Critical):
@@ -58,17 +58,17 @@ Batch requests → Check limits (max 10 tokens per getTokenMultiPrices)
 
 ### 1. Initial Data Gathering
 ```
-getTokenDetails(network, token_address)  → Basic metrics
-getTokenPools(network, token_address)    → Where it trades
+`getTokenDetails(network, token_address, rationale)`  → Basic metrics
+`getTokenPools(network, token_address, rationale)`    → Where it trades
 getPoolOHLCV(pool, 7d/30d intervals)     → Price history
-getPoolTransactions(pool, from?, to?)    → Recent activity patterns (time-range filter)
+`getPoolTransactions(network, pool_address, rationale)`    → Recent activity patterns (time-range filter)
 ```
 
 **For discovery workflows** (find tokens/pools to analyze):
 ```
-getNetworkPools(network, order_by='volume_usd', limit=20) → Top pools by volume
+`getNetworkPools(network, rationale)` → Top pools by volume
 getNetworkPoolsFilter(network, volume_24h_min=X)          → Filter pools by criteria
-search(query='token name or address')                      → Find across all networks
+`search(query, rationale)`                      → Find across all networks
 getDexPools(network, dex='uniswap_v3')                    → Pools on specific DEX
 ```
 

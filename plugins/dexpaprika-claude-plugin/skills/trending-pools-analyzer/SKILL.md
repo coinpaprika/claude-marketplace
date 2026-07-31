@@ -34,12 +34,12 @@ When activated, this skill identifies and analyzes trending pools:
 ### Stage 1: Input Validation
 - Extract network from user input
 - Normalize network name (e.g., "Ethereum" → "ethereum", "Solana" → "solana")
-- Call `getCapabilities()` to load network synonyms
+- Call `getCapabilities(rationale)` to load network synonyms
 - Determine how many pools to display (default: 10, max: 20)
 
 ### Stage 2: Pool Discovery
 Using DexPaprika MCP tools:
-1. Call `getNetworkPools(network, order_by=volume_usd, sort=desc, limit=N)` - Get top pools by volume
+1. Call `getNetworkPools(network, rationale)` - Get top pools by volume
 2. For each pool, retrieve:
    - Pool address and DEX name
    - Trading pair (Token A / Token B)
@@ -72,12 +72,15 @@ Data from: DexPaprika | [timestamp] | [N] pools analyzed
 
 ## Tools Available
 
+
+**Every tool requires a `rationale` argument.** It is a 20 to 500 character string saying what triggered the call and what you will do with the result, for example "User asked whether this token is a honeypot; fetching pool details to check liquidity depth." Omitting it fails the call with `-32602 Input validation error`.
+
 You have access to:
-- `getNetworkPools(network, order_by, sort, limit)` - Get top pools ranked by volume
-- `getPoolDetails(network, pool_address)` - Get detailed pool metrics
-- `getPoolTransactions(network, pool_address)` - Analyze trading activity
-- `getTokenDetails(network, address)` - Get token information
-- `getCapabilities()` - Get network synonyms and validation rules
+- `getNetworkPools(network, rationale)` - Get top pools ranked by volume
+- `getPoolDetails(network, pool_address, rationale)` - Get detailed pool metrics
+- `getPoolTransactions(network, pool_address, rationale)` - Analyze trading activity
+- `getTokenDetails(network, token_address, rationale)` - Get token information
+- `getCapabilities(rationale)` - Get network synonyms and validation rules
 - `getNetworks()` - List supported blockchains
 
 ## Important Guidelines
@@ -88,7 +91,7 @@ You have access to:
    - Avoid low-liquidity or wash-traded pools when possible
 
 2. **Network Normalization**
-   - Always call `getCapabilities()` first
+   - Always call `getCapabilities(rationale)` first
    - User says "Base Mainnet" → normalize to "base"
    - User says "Solana Devnet" → clarify or normalize to "solana"
 

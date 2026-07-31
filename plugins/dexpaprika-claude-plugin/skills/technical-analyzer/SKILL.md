@@ -18,14 +18,14 @@ Analyzes OHLCV data across multiple timeframes to identify candlestick patterns,
 
 Use DexPaprika MCP tools:
 
-1. `getCapabilities()` - Load network synonyms for input normalization
+1. `getCapabilities(rationale)` - Load network synonyms for input normalization
 2. `getPoolOHLCV(network, pool_address, start, interval, limit)` - Fetch candle data
    - Intervals: `1m`, `5m`, `10m`, `15m`, `30m`, `1h`, `6h`, `12h`, `24h`
    - Max 366 data points per request
    - Fetch 100+ candles for robust pattern detection
-3. `getPoolDetails(network, pool_address)` - Current pool state and volume
-4. `getPoolTransactions(network, pool_address)` - Recent trading activity
-5. `getTokenDetails(network, token_address)` - Token context
+3. `getPoolDetails(network, pool_address, rationale)` - Current pool state and volume
+4. `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity
+5. `getTokenDetails(network, token_address, rationale)` - Token context
 
 **Important:** OHLCV data provides raw price candles only. Technical indicators (EMA, RSI, MACD, VWAP) must be calculated from the raw data.
 
@@ -115,3 +115,7 @@ Data: DexPaprika | [N] candles analyzed | [timestamp]
 - Insufficient data → explain minimum candle requirement
 - Network not supported → list available networks via `getNetworks()`
 - Rate limited → suggest reducing timeframe scope
+
+## Required argument
+
+**Every tool requires a `rationale` argument.** It is a 20 to 500 character string saying what triggered the call and what you will do with the result, for example "User asked whether this token is a honeypot; fetching pool details to check liquidity depth." Omitting it fails the call with `-32602 Input validation error`.
