@@ -19,53 +19,53 @@ Provide objective, evidence-based cryptocurrency analysis including:
 ## Available MCP Tools (29 total)
 
 **Market Overview:**
-- `getGlobal()` - Total market cap, BTC dominance, volume, active cryptocurrencies
-- `getTickers(limit, quotes)` - Price data for all coins (sortable, default 50)
-- `getTickersById(coinId, quotes)` - Ticker for a specific coin
-- `getTickersHistoricalById(coinId, start, end, interval, limit, quote)` - Historical price ticks
+- `getGlobal(rationale)` - Total market cap, BTC dominance, volume, active cryptocurrencies
+- `getTickers(limit, quotes, rationale)` - Price data for all coins (sortable, default 50)
+- `getTickersById(coinId, quotes, rationale)` - Ticker for a specific coin
+- `getTickersHistoricalById(coinId, start, end, interval, limit, quote, rationale)` - Historical price ticks
 
 **Coin Research:**
-- `getCoins(limit)` - List all cryptocurrencies
-- `getCoinById(coinId)` - Detailed coin info (description, links, team, tags)
-- `getCoinEvents(coinId, limit)` - Upcoming/past events for a coin
-- `getCoinExchanges(coinId, limit)` - Which exchanges list this coin
-- `getCoinMarkets(coinId, limit, quotes)` - Trading pairs for this coin
+- `getCoins(limit, rationale)` - List all cryptocurrencies
+- `getCoinById(coinId, rationale)` - Detailed coin info (description, links, team, tags)
+- `getCoinEvents(coinId, limit, rationale)` - Upcoming/past events for a coin
+- `getCoinExchanges(coinId, limit, rationale)` - Which exchanges list this coin
+- `getCoinMarkets(coinId, limit, quotes, rationale)` - Trading pairs for this coin
 
 **OHLCV (Candlestick Data):**
-- `getCoinOHLCVHistorical(coinId, start, end, interval, limit, quote)` - Historical candles
-- `getCoinOHLCVLatest(coinId, quote)` - Last full day OHLCV
-- `getCoinOHLCVToday(coinId, quote)` - Today's partial OHLCV
+- `getCoinOHLCVHistorical(coinId, start, end, interval, limit, quote, rationale)` - Historical candles
+- `getCoinOHLCVLatest(coinId, quote, rationale)` - Last full day OHLCV
+- `getCoinOHLCVToday(coinId, quote, rationale)` - Today's partial OHLCV
 
 **Exchanges:**
-- `getExchanges(limit, quotes)` - List all exchanges
-- `getExchangeByID(exchangeId, quotes)` - Exchange details
-- `getExchangeMarkets(exchangeId, limit, quotes)` - Markets on an exchange
+- `getExchanges(limit, quotes, rationale)` - List all exchanges
+- `getExchangeByID(exchangeId, quotes, rationale)` - Exchange details
+- `getExchangeMarkets(exchangeId, limit, quotes, rationale)` - Markets on an exchange
 
 **Contract Lookups:**
-- `getPlatforms(limit)` - List contract platforms (eth-ethereum, bsc, etc.)
-- `getContracts(platformId, limit)` - List contracts on a platform
-- `getTickerByContract(platformId, contractAddress)` - Price by contract address
-- `getHistoricalTickerByContract(platformId, contractAddress, start, end, interval, limit, quote)` - Historical by contract
+- `getPlatforms(limit, rationale)` - List contract platforms (eth-ethereum, bsc, etc.)
+- `getContracts(platformId, limit, rationale)` - List contracts on a platform
+- `getTickerByContract(platformId, contractAddress, rationale)` - Price by contract address
+- `getHistoricalTickerByContract(platformId, contractAddress, start, end, interval, limit, quote, rationale)` - Historical by contract
 
 **Discovery & Utilities:**
-- `search(q, categories, limit)` - Search currencies, exchanges, ICOs, people, tags
-- `resolveId(type, query, limit)` - Resolve fuzzy names to canonical IDs
-- `priceConverter(baseCurrencyId, quoteCurrencyId, amount)` - Convert between currencies
-- `getTags(limit, additionalFields)` - List all tags/categories
-- `getTagById(tagId, additionalFields)` - Tag details (use `additionalFields: "coins"` to get coin list)
-- `getPeopleById(personId)` - Person details (founders, team)
+- `search(q, categories, limit, rationale)` - Search currencies, exchanges, ICOs, people, tags
+- `resolveId(type, query, limit, rationale)` - Resolve fuzzy names to canonical IDs
+- `priceConverter(baseCurrencyId, quoteCurrencyId, amount, rationale)` - Convert between currencies
+- `getTags(limit, additionalFields, rationale)` - List all tags/categories
+- `getTagById(tagId, additionalFields, rationale)` - Tag details (use `additionalFields: "coins"` to get coin list)
+- `getPeopleById(personId, rationale)` - Person details (founders, team)
 
 **Account & Metadata (paid tiers):**
-- `keyInfo()` - API key status and usage (Pro+)
-- `getMappings(coinpaprika, coingecko, coinmarketcap, ...)` - Cross-platform ID mapping (Business+)
-- `getChangelogIDs(page, limit)` - Track coin ID changes (Starter+)
-- `status()` - Server health check
+- `keyInfo(rationale)` - API key status and usage (Pro+)
+- `getMappings(coinpaprika, coingecko, coinmarketcap, ..., rationale)` - Cross-platform ID mapping (Business+)
+- `getChangelogIDs(page, limit, rationale)` - Track coin ID changes (Starter+)
+- `status(rationale)` - Server health check
 
 ## Coin ID Format
 
 - Pattern: `{symbol}-{name}` lowercase with hyphens
 - Examples: `btc-bitcoin`, `eth-ethereum`, `sol-solana`, `ada-cardano`
-- If unsure, use `search(q: "bitcoin")` or `resolveId(type: "coin", query: "bitcoin")` first
+- If unsure, use `search(q: "bitcoin", rationale)` or `resolveId(type: "coin", query: "bitcoin", rationale)` first
 
 ## Analysis Protocol
 

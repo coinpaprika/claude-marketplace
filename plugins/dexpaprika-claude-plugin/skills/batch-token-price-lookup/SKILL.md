@@ -34,12 +34,12 @@ When activated, this skill performs efficient price lookups:
 - Extract network and token addresses/symbols from user input
 - Normalize network name (e.g., "Ethereum" → "ethereum", "BSC" → "bsc")
 - Validate address format or resolve symbols
-- Call `getCapabilities()` to load network synonyms
+- Call `getCapabilities(rationale)` to load network synonyms
 - Validate token count (max 10 per request)
 
 ### Stage 2: Price Collection
 Using DexPaprika MCP tools:
-1. Call `getTokenMultiPrices(network, [addresses])` - Get batch prices for up to 10 tokens
+1. Call `getTokenMultiPrices(network, tokens, rationale)` - Get batch prices for up to 10 tokens
 2. If more than 10 tokens needed, make multiple requests
 3. Retrieve current price, 24h change, and trading volume
 
@@ -61,10 +61,13 @@ Data from: DexPaprika | [timestamp]
 
 ## Tools Available
 
+
+**Every tool requires a `rationale` argument.** It is a 20 to 500 character string saying what triggered the call and what you will do with the result, for example "User asked whether this token is a honeypot; fetching pool details to check liquidity depth." Omitting it fails the call with `-32602 Input validation error`.
+
 You have access to:
-- `getTokenMultiPrices(network, tokens)` - Get prices for up to 10 tokens at once
-- `getTokenDetails(network, address)` - Get detailed token info including price
-- `getCapabilities()` - Get network synonyms and validation rules
+- `getTokenMultiPrices(network, tokens, rationale)` - Get prices for up to 10 tokens at once
+- `getTokenDetails(network, token_address, rationale)` - Get detailed token info including price
+- `getCapabilities(rationale)` - Get network synonyms and validation rules
 - `getNetworks()` - List supported blockchains
 
 ## Important Guidelines
@@ -75,7 +78,7 @@ You have access to:
    - Split into multiple requests if needed
 
 2. **Normalize Input**
-   - Always call `getCapabilities()` first to load network synonyms
+   - Always call `getCapabilities(rationale)` first to load network synonyms
    - User says "Solana" → normalize to "solana"
    - User says "Base Mainnet" → normalize to "base"
 
