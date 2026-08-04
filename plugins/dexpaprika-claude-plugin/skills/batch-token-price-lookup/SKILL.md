@@ -67,7 +67,7 @@ Data from: DexPaprika | [timestamp]
 You have access to:
 - `getTokenMultiPrices(network, tokens, rationale)` - Get prices for up to 10 tokens at once
 - `getTokenDetails(network, token_address, rationale)` - Get detailed token info including price
-- `getCapabilities(rationale)` - Get network synonyms and validation rules
+- `getCapabilities(rationale)` - Get network synonyms, workflow sequences and known pitfalls
 - `getNetworks()` - List supported blockchains
 
 ## Important Guidelines

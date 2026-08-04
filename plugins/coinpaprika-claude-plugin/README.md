@@ -16,7 +16,7 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 | `getGlobal` | Total market cap, BTC dominance, 24h volume |
 | `getTickers` | All tickers with price, market cap, volume |
 | `getTickersById` | Ticker for a specific coin |
-| `getTickersHistoricalById` | Historical price ticks |
+| `getTickersHistoricalById` | Historical price ticks (Starter+, paid) |
 
 ### Coin Research
 | Tool | Description |
@@ -28,7 +28,7 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 ### OHLCV (Candlestick Data)
 | Tool | Description |
 |------|-------------|
-| `getCoinOHLCVHistorical` | Historical candles (5m to 24h intervals) |
+| `getCoinOHLCVHistorical` | Historical candles, 5m to 24h intervals (Starter+, paid) |
 | `getCoinOHLCVLatest` | Last full day OHLCV |
 | `getCoinOHLCVToday` | Today's partial OHLCV |
 
@@ -45,7 +45,7 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 | `getPlatforms` | List contract platforms |
 | `getContracts` | Contracts on a platform |
 | `getTickerByContract` | Price by contract address |
-| `getHistoricalTickerByContract` | Historical data by contract |
+| `getHistoricalTickerByContract` | Historical data by contract (Starter+, paid) |
 
 ### Coins listed and traded
 | Tool | Description |
@@ -56,7 +56,7 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 ### Discovery & Utilities
 | Tool | Description |
 |------|-------------|
-| `getCapabilities` | Server capabilities, workflow patterns, validation rules |
+| `getCapabilities` | Server name and version, tool count, plan tiers per tool, coin ID format |
 | `status` | Server status and configuration |
 | `submitFeedback` | Report a problem back to the CoinPaprika team |
 | `search` | Search coins, exchanges, people, tags |
@@ -68,7 +68,11 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 
 ### Paid Tier
 
-These need a paid CoinPaprika key. On the hosted server they return an upgrade stub.
+These need a paid CoinPaprika key. On the hosted server they return an upgrade stub
+(`{"error":"paid_endpoint"}`) rather than data. Three more paid tools are marked
+"(Starter+, paid)" in the tables above: `getTickersHistoricalById`,
+`getCoinOHLCVHistorical` and `getHistoricalTickerByContract`. The authoritative list
+is `plan_tiers` in a live `getCapabilities` call.
 
 | Tool | Description |
 |------|-------------|

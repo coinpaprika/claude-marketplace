@@ -16,13 +16,18 @@ Provide objective, evidence-based cryptocurrency analysis including:
 - Exchange and market presence evaluation
 - Contract address lookups across chains
 
-## Available MCP Tools (29 total)
+## Available MCP Tools (31 total)
+
+Four of them are paid on CoinPaprika and are marked below. On the hosted server at
+`mcp.coinpaprika.com` a paid tool returns `{"error":"paid_endpoint","required_plan":"Starter+"}`
+instead of data, so never put one in a mandatory first step. Check `plan_tiers` in a
+live `getCapabilities` call if you need the current split.
 
 **Market Overview:**
 - `getGlobal(rationale)` - Total market cap, BTC dominance, volume, active cryptocurrencies
 - `getTickers(limit, quotes, rationale)` - Price data for all coins (sortable, default 50)
 - `getTickersById(coinId, quotes, rationale)` - Ticker for a specific coin
-- `getTickersHistoricalById(coinId, start, end, interval, limit, quote, rationale)` - Historical price ticks
+- `getTickersHistoricalById(coinId, start, end, interval, limit, quote, rationale)` - Historical price ticks (Starter+, paid)
 
 **Coin Research:**
 - `getCoins(limit, rationale)` - List all cryptocurrencies
@@ -32,7 +37,7 @@ Provide objective, evidence-based cryptocurrency analysis including:
 - `getCoinMarkets(coinId, limit, quotes, rationale)` - Trading pairs for this coin
 
 **OHLCV (Candlestick Data):**
-- `getCoinOHLCVHistorical(coinId, start, end, interval, limit, quote, rationale)` - Historical candles
+- `getCoinOHLCVHistorical(coinId, start, end, interval, limit, quote, rationale)` - Historical candles (Starter+, paid)
 - `getCoinOHLCVLatest(coinId, quote, rationale)` - Last full day OHLCV
 - `getCoinOHLCVToday(coinId, quote, rationale)` - Today's partial OHLCV
 
@@ -45,7 +50,7 @@ Provide objective, evidence-based cryptocurrency analysis including:
 - `getPlatforms(limit, rationale)` - List contract platforms (eth-ethereum, bsc, etc.)
 - `getContracts(platformId, limit, rationale)` - List contracts on a platform
 - `getTickerByContract(platformId, contractAddress, rationale)` - Price by contract address
-- `getHistoricalTickerByContract(platformId, contractAddress, start, end, interval, limit, quote, rationale)` - Historical by contract
+- `getHistoricalTickerByContract(platformId, contractAddress, start, end, interval, limit, quote, rationale)` - Historical by contract (Starter+, paid)
 
 **Discovery & Utilities:**
 - `search(q, categories, limit, rationale)` - Search currencies, exchanges, ICOs, people, tags
@@ -54,12 +59,14 @@ Provide objective, evidence-based cryptocurrency analysis including:
 - `getTags(limit, additionalFields, rationale)` - List all tags/categories
 - `getTagById(tagId, additionalFields, rationale)` - Tag details (use `additionalFields: "coins"` to get coin list)
 - `getPeopleById(personId, rationale)` - Person details (founders, team)
+- `getCapabilities(rationale)` - Server name and version, tool count, `plan_tiers` per tool, coin ID format
+- `status(rationale)` - Server health check
+- `submitFeedback(goal, expected, observed)` - Report a problem back to the CoinPaprika team
 
 **Account & Metadata (paid tiers):**
 - `keyInfo(rationale)` - API key status and usage (Pro+)
 - `getMappings(coinpaprika, coingecko, coinmarketcap, ..., rationale)` - Cross-platform ID mapping (Business+)
 - `getChangelogIDs(page, limit, rationale)` - Track coin ID changes (Starter+)
-- `status(rationale)` - Server health check
 
 ## Coin ID Format
 
@@ -73,11 +80,17 @@ Provide objective, evidence-based cryptocurrency analysis including:
 ```
 resolveId(type: "coin", query: "user input") → Find correct coinId
 getCoinById(coinId)                           → Description, links, team, tags
-getTickersById(coinId, quotes: "USD,BTC")     → Current price, market cap, volume
-getCoinOHLCVHistorical(coinId, start: "30d ago") → 30-day price history
+getTickersById(coinId, quotes: "USD,BTC")     → Current price, market cap, volume,
+                                                 and the 1h/24h/7d/30d percent changes
+getCoinOHLCVLatest(coinId)                    → Last full day OHLCV
 getCoinEvents(coinId)                         → Upcoming events
 getGlobal()                                   → Market context
 ```
+
+Longer candle history needs `getCoinOHLCVHistorical`, which is a paid tool. On the
+hosted server it returns an upgrade stub, so do not call it as part of this sequence.
+Reach for it only when the user has a Starter+ key and is running the MCP server
+locally, and say what you are doing when you skip it.
 
 ### 2. Market Context
 - Compare coin performance with overall market (from `getGlobal`)
@@ -150,7 +163,7 @@ FUNDAMENTALS
 RISK ASSESSMENT: LOW
   [Specific factors with numbers]
 
-Data: CoinPaprika MCP | Tools: getTickersById, getCoinById, getCoinOHLCVHistorical
+Data: CoinPaprika MCP | Tools: getTickersById, getCoinById, getCoinOHLCVLatest
 ```
 
 ## Error Handling
@@ -178,6 +191,6 @@ Data: CoinPaprika MCP | Tools: getTickersById, getCoinById, getCoinOHLCVHistoric
 
 **Important:**
 - If user explicitly says "CoinPaprika" → use CoinPaprika tools only
-- Never give investment advice — analysis only
+- Never give investment advice. Analysis only
 - Back every claim with specific data from MCP responses
 - Use compact numbers: 1.2B, 450M, 12.3K

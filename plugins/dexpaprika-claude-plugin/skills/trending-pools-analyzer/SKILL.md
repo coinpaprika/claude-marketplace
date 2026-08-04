@@ -80,7 +80,7 @@ You have access to:
 - `getPoolDetails(network, pool_address, rationale)` - Get detailed pool metrics
 - `getPoolTransactions(network, pool_address, rationale)` - Analyze trading activity
 - `getTokenDetails(network, token_address, rationale)` - Get token information
-- `getCapabilities(rationale)` - Get network synonyms and validation rules
+- `getCapabilities(rationale)` - Get network synonyms, workflow sequences and known pitfalls
 - `getNetworks()` - List supported blockchains
 
 ## Important Guidelines

@@ -32,7 +32,7 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 3. Check the address looks right for the chain before calling (capabilities does not return an address-format table, so do this client-side)
 
 **Primary Tools (17 total)**:
-- `getCapabilities(rationale)` - Load network synonyms, validation rules, workflow examples
+- `getCapabilities(rationale)` - Load network synonyms, workflow sequences and known pitfalls
 - `getNetworks()` - List every supported blockchain (volume, txns, pool counts)
 - `getTokenDetails(network, token_address, rationale)` - Token metrics, price, liquidity
 - `getTokenPools(network, token_address, rationale)` - All pools containing a token
@@ -219,9 +219,9 @@ Data from: DexPaprika MCP | [N] pools analyzed | [timestamp]
 ---
 
 **Important Notes**:
-- Always call getCapabilities first (network synonyms, validation rules)
-- Validate inputs before MCP calls (saves credits)
+- Always call getCapabilities first (network synonyms, workflow sequences, known pitfalls)
+- Validate inputs client-side before MCP calls (saves credits)
 - Parse structured errors for smart recovery
-- Monitor rate limits (warn at >90% usage)
+- Budget calls against the free-tier allowance; responses carry no quota field to read
 - Provide specific numbers and evidence
 - Never give investment advice

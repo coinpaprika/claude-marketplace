@@ -130,7 +130,7 @@ You have access to all DexPaprika MCP tools:
 - `getPoolTransactions(network, pool_address, rationale)` - Recent swaps and trades (use for pattern analysis)
 - `getTokenMultiPrices(network, tokens, rationale)` - Batch prices (max 10)
 - `getNetworks()` - List supported blockchains
-- `getCapabilities(rationale)` - Get network synonyms and validation rules
+- `getCapabilities(rationale)` - Get network synonyms, workflow sequences and known pitfalls
 
 ## Important Guidelines
 
