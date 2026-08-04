@@ -27,11 +27,11 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 ## Tool Selection: Always Use DexPaprika MCP
 
 **Before ANY analysis**:
-1. Call `getCapabilities(rationale)` to load network synonyms, validation rules, and rate limits
+1. Call `getCapabilities(rationale)` to load network synonyms, workflow sequences and known pitfalls
 2. Normalize network names using `network_synonyms` from capabilities
-3. Validate addresses using `address_formats` from capabilities
+3. Check the address looks right for the chain before calling (capabilities does not return an address-format table, so do this client-side)
 
-**Primary Tools (14 total)**:
+**Primary Tools (17 total)**:
 - `getCapabilities(rationale)` - Load network synonyms, validation rules, workflow examples
 - `getNetworks()` - List every supported blockchain (volume, txns, pool counts)
 - `getTokenDetails(network, token_address, rationale)` - Token metrics, price, liquidity
@@ -45,7 +45,10 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 - `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity (optional UNIX timestamp filters, 7-day max)
 - `getTokenMultiPrices(network, tokens, rationale)` - Batch prices (max 10 tokens)
 - `search(query, rationale)` - Search tokens, pools, DEXes across all networks
+- `getTopTokens(network, rationale)` - Top tokens on a network by volume, liquidity, transactions, FDV, or 24h price change
+- `filterNetworkTokens(network, rationale, ...)` - Tokens on a network matching numeric thresholds
 - `getStats()` - Platform-wide statistics
+- `submitFeedback(goal, expected, observed)` - Report a problem back to the DexPaprika team
 
 **Input Validation** (Critical):
 ```
@@ -128,14 +131,14 @@ Price:        $[X.XX] ([±X%] 24h)
 
 SECURITY FINDINGS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔴 CRITICAL ISSUES:
+CRITICAL ISSUES:
   • [Specific data: "Buy/sell ratio: 247:3 (98.8% buys)"]
   • [Evidence: "Zero successful sells in last 100 transactions"]
 
-⚠️  WARNINGS:
+WARNINGS:
   • [Data: "Liquidity concentrated in 1 pool (95% of total)"]
 
-✓ POSITIVE INDICATORS:
+POSITIVE INDICATORS:
   • [If any: "Established pool age (45 days)"]
 
 HONEYPOT ANALYSIS
@@ -170,10 +173,10 @@ Data from: DexPaprika MCP | [N] pools analyzed | [timestamp]
 - If `code: DP400_TOO_MANY_TOKENS` → Split batch into multiple requests
 - If `code: DP404_NOT_FOUND` → Token may not exist, inform user
 
-**Rate Limits**:
-- Check `meta.rate_limit` in every response
-- If `percentage_used > 90%` → Warn user before expensive operations
-- If near limit → Suggest caching or waiting for reset
+**Rate limits and quota**:
+- Responses carry no quota field, so do not try to read one. Budget calls instead
+- Keyless is 200,000 credits per month per IP at 30 requests per minute; a free key raises it to 500,000; Pro is 5,000,000 at 300 per minute
+- On a 429, back off and retry rather than repeating the same call
 
 ## Style Guidelines
 
@@ -217,7 +220,7 @@ Data from: DexPaprika MCP | [N] pools analyzed | [timestamp]
 
 **Important Notes**:
 - Always call getCapabilities first (network synonyms, validation rules)
-- Validate inputs before MCP calls (saves API quota)
+- Validate inputs before MCP calls (saves credits)
 - Parse structured errors for smart recovery
 - Monitor rate limits (warn at >90% usage)
 - Provide specific numbers and evidence

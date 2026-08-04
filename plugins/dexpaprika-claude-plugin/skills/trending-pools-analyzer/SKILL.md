@@ -143,7 +143,7 @@ Rank | Pool Pair              | DEX      | 24h Volume  | Price      | TX Count
 #4   | MARINADE/SOL           | Orca     | $15.3M      | $2.85      | 4,123
 #5   | PYTH/USDC              | Raydium  | $12.8M      | $1.45      | 3,891
 
-⭐ Current Trend: Solana ecosystem tokens leading activity
+Current Trend: Solana ecosystem tokens leading activity
 - BONK dominance continues with highest volume
 - SOL/USDC pair shows institutional interest
 - Liquid staking derivatives gaining traction
@@ -172,7 +172,7 @@ Rank | Pool Pair              | DEX        | 24h Volume  | Price      | TX Count
 ... [remaining 12 pools]
 #15  | USDBC/USDC             | Curve      | $0.8M       | $1.00      | 234
 
-⭐ Current Trend: ETH ecosystem dominance on Base
+Current Trend: ETH ecosystem dominance on Base
 - Major institutional volume on core ETH/USDC pair
 - Liquid staking tokens (cbETH) showing strong activity
 - Aerodrome DEX token rising in volume rankings
@@ -226,7 +226,7 @@ User: "Show me trending pools"
 
 Response:
 ```
-⚠️ NETWORK NOT SPECIFIED
+NETWORK NOT SPECIFIED
 
 Which blockchain would you like to analyze?
 

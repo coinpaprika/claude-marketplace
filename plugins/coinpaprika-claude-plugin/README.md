@@ -4,9 +4,9 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 
 ## What's Included
 
-- **31 MCP tools** — prices, tickers, OHLCV, exchanges, contract lookups, tags, search, price converter
-- **1 agent** (`@crypto-analyst`) — market analysis, price trends, risk assessment
-- **1 skill** (`crypto-market-search`) — search and discover coins
+- **31 MCP tools**: prices, tickers, OHLCV, exchanges, contract lookups, tags, search, price converter
+- **1 agent** (`@crypto-analyst`): market analysis, price trends, risk assessment
+- **1 skill** (`crypto-market-search`): search and discover coins
 
 ## MCP Tools
 
@@ -47,9 +47,18 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 | `getTickerByContract` | Price by contract address |
 | `getHistoricalTickerByContract` | Historical data by contract |
 
+### Coins listed and traded
+| Tool | Description |
+|------|-------------|
+| `getCoinExchanges` | Exchanges listing a coin |
+| `getCoinMarkets` | Trading pairs for a coin, with per-market price and volume |
+
 ### Discovery & Utilities
 | Tool | Description |
 |------|-------------|
+| `getCapabilities` | Server capabilities, workflow patterns, validation rules |
+| `status` | Server status and configuration |
+| `submitFeedback` | Report a problem back to the CoinPaprika team |
 | `search` | Search coins, exchanges, people, tags |
 | `resolveId` | Resolve fuzzy names to canonical IDs |
 | `priceConverter` | Convert between currencies |
@@ -58,19 +67,19 @@ Cryptocurrency market data for 12,000+ cryptocurrencies and 350+ exchanges via t
 | `getPeopleById` | Person/founder details |
 
 ### Paid Tier
+
+These need a paid CoinPaprika key. On the hosted server they return an upgrade stub.
+
 | Tool | Description |
 |------|-------------|
-| `getCoinExchanges` | Exchanges listing a coin (Pro+) |
-| `getCoinMarkets` | Trading pairs for a coin (Pro+) |
 | `keyInfo` | API key status (Pro+) |
 | `getMappings` | Cross-platform ID mapping (Business+) |
 | `getChangelogIDs` | Coin ID changes (Starter+) |
-| `status` | Server health check |
 
 ## Rate Limits
 
 - **Free tier**: 20,000 calls/month, no API key needed
-- **Pro tier**: Higher limits via `api-pro.coinpaprika.com`
+- **Paid plans**: from $99/month for 400,000 calls, via `api-pro.coinpaprika.com`. See https://coinpaprika.com/api/pricing/
 - **Global**: 10 requests/second per IP
 
 ## Coin ID Format

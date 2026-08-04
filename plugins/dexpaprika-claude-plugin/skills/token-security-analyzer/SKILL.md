@@ -108,8 +108,8 @@ Price:        $X.XX (±X% 24h)
 SECURITY FINDINGS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✓ Positive indicators (if any)
-⚠️ Warnings (concerns found)
-🔴 Critical issues (if any)
+Warnings (concerns found)
+Critical issues (if any)
 
 RECOMMENDATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -187,18 +187,18 @@ Price:        $0.0012 (-8% 24h)
 
 SECURITY FINDINGS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔴 CRITICAL ISSUES:
+CRITICAL ISSUES:
   • Buy/sell ratio: 247:3 (98.8% buys)
   • Zero successful sells in last 100 transactions
   • Extreme slippage asymmetry (2% buy, 50% sell)
 
-⚠️ WARNINGS:
+WARNINGS:
   • Liquidity concentrated in 1 pool (100%)
   • Low absolute liquidity ($850K)
 
 RECOMMENDATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔ DO NOT TRADE - Clear honeypot indicators. Users cannot sell tokens.
+DO NOT TRADE - Clear honeypot indicators. Users cannot sell tokens.
 This is a classic buy-only scam where sell transactions fail or revert.
 ```
 
@@ -231,7 +231,7 @@ SECURITY FINDINGS
 
 RECOMMENDATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Safe to trade. Standard stablecoin with proper mechanics and liquidity.
+Safe to trade. Standard stablecoin with proper mechanics and liquidity.
 Liquidity distribution and buy/sell balance indicate healthy market.
 ```
 
@@ -255,11 +255,11 @@ Price:        $0.0045 (±65% 24h)
 
 SECURITY FINDINGS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔴 CRITICAL ISSUES:
+CRITICAL ISSUES:
   • Token age: 2 days old
   • Buy/sell ratio: 892:47 (94.8% buys) - very asymmetric
 
-⚠️ WARNINGS:
+WARNINGS:
   • Extremely low liquidity ($15K total)
   • Single pool dominance (100% concentration)
   • High volatility: 65% price swings in 24h
@@ -267,7 +267,7 @@ SECURITY FINDINGS
 
 RECOMMENDATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚠️ HIGH-RISK speculative token with typical pump-and-dump indicators.
+HIGH-RISK speculative token with typical pump-and-dump indicators.
 Recommend: Avoiding, or waiting for token maturity and liquidity growth.
 This pattern matches classic rug pull precursors.
 ```

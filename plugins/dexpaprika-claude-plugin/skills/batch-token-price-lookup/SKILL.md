@@ -161,7 +161,7 @@ Current Price: $0.0234
 24h Volume: $450K
 Liquidity: $85K
 
-⚠️ Note: New token detected (created within 7 days)
+Note: New token detected (created within 7 days)
 - Limited trading history
 - Price may be volatile
 - Low liquidity - use caution
@@ -175,7 +175,7 @@ User: "What's the price of 0xdeadbeef on Ethereum?"
 
 Response:
 ```
-⚠️ PRICE UNAVAILABLE
+PRICE UNAVAILABLE
 
 Token Address: 0xdeadbeef (Ethereum)
 Status: Not found or insufficient liquidity
