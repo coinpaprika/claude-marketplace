@@ -4,9 +4,9 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 
 ## What's Included
 
-- **17 MCP tools** — tokens, pools, OHLCV, transactions, search, batch prices
-- **1 agent** (`@defi-data-analyst`) — DeFi security analysis, honeypot detection, scam identification
-- **4 skills** — Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
+- **17 MCP tools**: tokens, pools, OHLCV, transactions, search, batch prices
+- **1 agent** (`@defi-data-analyst`): DeFi security analysis, honeypot detection, scam identification
+- **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
 ## MCP Tools
 
@@ -25,7 +25,10 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 | `getTokenDetails` | Token price, liquidity, metrics |
 | `getTokenPools` | All pools containing a token |
 | `getTokenMultiPrices` | Batch prices for up to 10 tokens |
+| `getTopTokens` | Top tokens on a network by volume, liquidity, transactions, FDV, or 24h price change |
+| `filterNetworkTokens` | Filter tokens by volume, liquidity, FDV, transactions, creation date |
 | `search` | Search tokens, pools, DEXes across all networks |
+| `submitFeedback` | Report a problem back to the DexPaprika team |
 
 ## Skills
 
@@ -38,9 +41,11 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 
 ## Rate Limits
 
-- **Keyless**: 200,000 requests/month per IP, 30/min. No API key needed to start.
-- **Free API key**: 500,000 requests/month, 30/min.
-- **Pro**: 5,000,000 requests/month, 300/min.
+- **Keyless**: 200,000 credits/month per IP, 30/min, data delayed up to 15 seconds. No API key needed to start.
+- **Free API key**: 500,000 credits/month, 30/min, data delayed up to 15 seconds.
+- **Pro** ($99/month): 5,000,000 credits/month, 300/min, real-time data.
+
+One request costs one credit. Batch endpoints cost one credit per item.
 
 See the [rate limits guide](https://docs.dexpaprika.com/knowledge-base/rate-limits) for details.
 
@@ -53,10 +58,10 @@ Full list: call `getNetworks()`.
 ## Resources
 
 - [API Docs](https://docs.dexpaprika.com)
-- [Streaming API](https://streaming.dexpaprika.com) (real-time SSE, ~1s updates)
+- [Streaming API](https://streaming.dexpaprika.com) (SSE, pushed when a swap moves the price)
 - [CLI](https://github.com/coinpaprika/dexpaprika-cli)
 - [AI Agents Showcase](https://agents.dexpaprika.com)
-- SDKs: [Go](https://github.com/coinpaprika/dexpaprika-sdk-go) | [Python](https://github.com/coinpaprika/dexpaprika-sdk-python) | [TypeScript](https://github.com/coinpaprika/dexpaprika-sdk-ts) | [PHP](https://github.com/coinpaprika/dexpaprika-sdk-php) | [Rust](https://github.com/coinpaprika/dexpaprika-sdk-rust)
+- SDKs: [Go](https://github.com/coinpaprika/dexpaprika-sdk-go) | [Python](https://github.com/coinpaprika/dexpaprika-sdk-python) | [TypeScript](https://github.com/coinpaprika/dexpaprika-sdk-ts) | [PHP](https://github.com/coinpaprika/dexpaprika-sdk-php)
 
 ## Privacy
 

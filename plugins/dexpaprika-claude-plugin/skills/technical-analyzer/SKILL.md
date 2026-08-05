@@ -106,7 +106,7 @@ Data: DexPaprika | [N] candles analyzed | [timestamp]
 - Note when data is insufficient (too few candles for reliable patterns)
 - Combine price action with volume for confirmation
 - Higher timeframe signals override lower timeframe
-- Never give trading advice — provide analysis only
+- Never give trading advice. Provide analysis only
 - Include confidence levels with pattern identifications
 
 ## Error Handling

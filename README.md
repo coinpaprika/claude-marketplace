@@ -5,7 +5,7 @@ Official Claude Code plugins for **CoinPaprika** and **DexPaprika**: crypto mark
 - **CoinPaprika**: 12,000+ cryptocurrencies, 350+ exchanges, 31 MCP tools
 - **DexPaprika**: 36 blockchains, 36M+ pools, 17 MCP tools
 
-Both APIs work without an API key. Paid plans raise the quotas; see the rate limits below.
+Both APIs have a free tier that works without an API key. Paid plans raise the quotas; see the rate limits below.
 
 ## Quick Start
 
@@ -13,7 +13,7 @@ Both APIs work without an API key. Paid plans raise the quotas; see the rate lim
 ```bash
 git clone https://github.com/coinpaprika/claude-marketplace.git
 cd claude-marketplace
-# Open in Claude Code — plugins install automatically via .claude/settings.json
+# Open in Claude Code, plugins install automatically via .claude/settings.json
 ```
 
 ### Option 2: Plugin Marketplace
@@ -31,7 +31,7 @@ cd claude-marketplace
 **31 MCP tools** for centralized exchange market data:
 - Prices, tickers, market caps for 12,000+ cryptocurrencies
 - OHLCV candlestick data (historical, latest, today)
-- Exchange directory across 350+ exchanges (per-coin exchange listings and trading pairs are Pro tier)
+- Exchange directory across 350+ exchanges, including per-coin exchange listings and trading pairs
 - Contract address lookups across chains
 - Tags, categories, search, price converter
 - People profiles, ID mappings, changelog
@@ -56,7 +56,7 @@ cd claude-marketplace
 
 **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
-**No API key needed to start**: 200,000 requests/month, or 500,000 with a free key. Paid plans raise the quota and the per-minute rate; see [pricing](https://dexpaprika.com/pricing).
+**No API key needed to start**: 200,000 credits/month keyless per IP, or 500,000 with a free key, at 30 requests/minute, with data delayed up to 15 seconds. Pro is $99/month for 5,000,000 credits at 300/minute with real-time data; see [pricing](https://dexpaprika.com/pricing).
 
 ## Updating
 
@@ -135,7 +135,7 @@ claude-marketplace/
 ```bash
 # Check MCP servers are connected
 claude mcp list
-# Should show: coinpaprika (SSE) and dexpaprika (SSE)
+# Should show: coinpaprika (SSE) and dexpaprika (streamable HTTP)
 
 # Test CoinPaprika
 Using CoinPaprika, what's the price of Ethereum?
@@ -146,12 +146,12 @@ Using DexPaprika, show me trending pools on Solana
 
 ## API Rate Limits
 
-| API | Free Tier | Auth Required |
-|-----|-----------|---------------|
+| API | Free tier | Key needed to start |
+|-----|-----------|---------------------|
 | CoinPaprika | 20,000 calls/month | No |
-| DexPaprika | 200,000 requests/month (500,000 with a free key) | No |
+| DexPaprika | 200,000 credits/month keyless per IP (500,000 with a free key) | No |
 
-Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, DexPaprika 30 requests/minute on the free tiers and 300 on Pro.
+Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, DexPaprika 30 requests/minute on the free tiers and 300 on Pro. On DexPaprika, free-tier data is delayed up to 15 seconds; real-time is the Pro figure.
 
 ## Resources
 
@@ -159,7 +159,7 @@ Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, 
 - [CoinPaprika API](https://api.coinpaprika.com) | [DexPaprika API](https://api.dexpaprika.com)
 - [AI Agents Showcase](https://agents.dexpaprika.com)
 - [LLM-readable docs](https://docs.coinpaprika.com/llms-full.txt)
-- [Streaming API](https://streaming.dexpaprika.com) (real-time SSE, ~1s updates)
+- [Streaming API](https://streaming.dexpaprika.com) (SSE, pushed when a swap moves the price)
 - [CoinPaprika CLI](https://github.com/coinpaprika/coinpaprika-cli) | [DexPaprika CLI](https://github.com/coinpaprika/dexpaprika-cli)
 
 **SDKs**: [Go](https://github.com/coinpaprika/coinpaprika-api-go-client) | [Python](https://github.com/coinpaprika/coinpaprika-api-python-client) | [Node.js](https://github.com/coinpaprika/coinpaprika-api-nodejs-client) | [PHP](https://github.com/coinpaprika/coinpaprika-api-php-client) | [Swift](https://github.com/coinpaprika/coinpaprika-api-swift-client) | [Kotlin](https://github.com/coinpaprika/coinpaprika-api-kotlin-client)
@@ -171,4 +171,4 @@ Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, 
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT, see [LICENSE](LICENSE)

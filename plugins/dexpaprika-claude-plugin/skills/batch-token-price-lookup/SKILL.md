@@ -67,7 +67,7 @@ Data from: DexPaprika | [timestamp]
 You have access to:
 - `getTokenMultiPrices(network, tokens, rationale)` - Get prices for up to 10 tokens at once
 - `getTokenDetails(network, token_address, rationale)` - Get detailed token info including price
-- `getCapabilities(rationale)` - Get network synonyms and validation rules
+- `getCapabilities(rationale)` - Get network synonyms, workflow sequences and known pitfalls
 - `getNetworks()` - List supported blockchains
 
 ## Important Guidelines
@@ -161,7 +161,7 @@ Current Price: $0.0234
 24h Volume: $450K
 Liquidity: $85K
 
-⚠️ Note: New token detected (created within 7 days)
+Note: New token detected (created within 7 days)
 - Limited trading history
 - Price may be volatile
 - Low liquidity - use caution
@@ -175,7 +175,7 @@ User: "What's the price of 0xdeadbeef on Ethereum?"
 
 Response:
 ```
-⚠️ PRICE UNAVAILABLE
+PRICE UNAVAILABLE
 
 Token Address: 0xdeadbeef (Ethereum)
 Status: Not found or insufficient liquidity

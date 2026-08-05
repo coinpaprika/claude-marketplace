@@ -19,7 +19,7 @@ Search, discover, and analyze cryptocurrency market data across 12,000+ cryptocu
 | `getCoinById(coinId, rationale)` | Coin description, links, team, tags |
 | `getCoinExchanges(coinId, rationale)` | Which exchanges list this coin |
 | `getCoinMarkets(coinId, quotes, rationale)` | Trading pairs for a coin |
-| `getCoinOHLCVHistorical(coinId, start, rationale)` | Historical candlestick data |
+| `getCoinOHLCVHistorical(coinId, start, rationale)` | Historical candlestick data (Starter+, paid) |
 | `getCoinOHLCVLatest(coinId, rationale)` | Last full day OHLCV |
 | `getCoinOHLCVToday(coinId, rationale)` | Today's partial OHLCV |
 | `getExchanges(limit, quotes, rationale)` | List exchanges |
@@ -65,9 +65,18 @@ If unsure of the ID, call `search(q: "user query", rationale)` or `resolveId(typ
 1. `getTagById(tagId: "stablecoin", additionalFields: "coins", rationale)` returns array of coin IDs
 2. Common tags: `stablecoin`, `defi`, `nft`, `layer-1`, `layer-2`, `meme-token`
 
-**Historical OHLCV:**
+**Recent OHLCV, free tier:**
+1. `getCoinOHLCVLatest(coinId: "btc-bitcoin", rationale)` for the last full day
+2. `getCoinOHLCVToday(coinId: "btc-bitcoin", rationale)` for today's partial candle
+3. For percent changes over 1h, 24h, 7d and 30d use `getTickersById` instead of candles
+
+**Historical OHLCV, paid:**
 1. `getCoinOHLCVHistorical(coinId: "btc-bitcoin", start: "2025-01-01", interval: "24h", limit: 30, rationale)`
 2. Intervals: `5m`, `15m`, `30m`, `1h`, `6h`, `12h`, `24h`
+3. This one needs a Starter+ CoinPaprika key. The hosted server at `mcp.coinpaprika.com`
+   answers it with `{"error":"paid_endpoint","required_plan":"Starter+"}`, so tell the user
+   what is missing rather than retrying. The same applies to `getTickersHistoricalById` and
+   `getHistoricalTickerByContract`.
 
 ## Output Guidelines
 
