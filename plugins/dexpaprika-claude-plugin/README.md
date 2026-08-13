@@ -18,7 +18,7 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 | `getNetworkDexes` | DEXes on a network |
 | `getNetworkPools` | Top pools on a network (sortable by volume, price, txns) |
 | `getNetworkPoolsFilter` | Filter pools by volume, txns, creation date |
-| `getDexPools` | Pools for a specific DEX |
+| `getDexPools` | Pools for a specific DEX. REST equivalent: `GET /networks/{network}/pools/search?dex_name={dex_id}` |
 | `getPoolDetails` | Pool details (tokens, volume, liquidity) |
 | `getPoolOHLCV` | Historical price candles (1m to 24h intervals) |
 | `getPoolTransactions` | Recent swaps and trades |
@@ -29,6 +29,8 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 | `filterNetworkTokens` | Filter tokens by volume, liquidity, FDV, transactions, creation date |
 | `search` | Search tokens, pools, DEXes across all networks |
 | `submitFeedback` | Report a problem back to the DexPaprika team |
+
+The old REST path for pools on a single DEX, `/networks/{network}/dexes/{dex}/pools`, was removed and returns HTTP 410. Pools on one DEX now come from `/networks/{network}/pools/search` with a `dex_name` filter, which takes the dex id (`uniswap_v3`) from `/networks/{network}/dexes`, matched case-insensitively. Passing the display name (`Uniswap V3`) returns HTTP 200 with an empty `results` array rather than an error, so a wrong value looks like a DEX with no pools. That endpoint returns rows under `results` with `has_next_page`/`next_cursor` pagination and a `volume_usd_24h` field, so there is no `pools` array, no `page_info` and no bare `volume_usd` on it.
 
 ## Skills
 

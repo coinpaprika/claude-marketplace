@@ -39,7 +39,7 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 - `getPoolDetails(network, pool_address, rationale)` - Pool state, volume, transactions
 - `getNetworkPools(network, rationale)` - Top pools on a network
 - `getNetworkPoolsFilter(network, volume_24h_min, txns_24h_min, ...)` - Filter pools by criteria
-- `getDexPools(network, dex)` - Pools for a specific DEX
+- `getDexPools(network, dex)` - Pools for a specific DEX. REST equivalent: `GET /networks/{network}/pools/search?dex_name={dex_id}`; the old `/networks/{network}/dexes/{dex}/pools` path returns HTTP 410
 - `getNetworkDexes(network)` - DEXes on a network
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
 - `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity (optional UNIX timestamp filters, 7-day max)
@@ -73,6 +73,7 @@ getPoolOHLCV(pool, 7d/30d intervals)     → Price history
 getNetworkPoolsFilter(network, volume_24h_min=X)          → Filter pools by criteria
 `search(query, rationale)`                      → Find across all networks
 getDexPools(network, dex='uniswap_v3')                    → Pools on specific DEX
+  REST: /networks/{network}/pools/search?dex_name=uniswap_v3 (rows under results)
 ```
 
 ### 2. Honeypot Detection
