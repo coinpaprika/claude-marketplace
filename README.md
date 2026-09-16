@@ -56,7 +56,7 @@ cd claude-marketplace
 
 **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
-**No API key needed to start**: keyless access at 30 requests/minute, with data delayed up to 15 seconds. A free key raises the monthly quota. Pro is $99/month at 300/minute with real-time data. Monthly quotas change, so read the current figures from [pricing](https://dexpaprika.com/api/pricing).
+**No API key needed to start**: keyless access at 15 requests/minute, with data delayed up to 60 seconds. A free key raises that to 30/minute and raises the credit allowance. Paid plans are real-time: Dev is $30/month at 120/minute and Pro $99/month at 500/minute. Quotas change, so read the current figures from [pricing](https://dexpaprika.com/api/pricing).
 
 ## Updating
 
@@ -151,7 +151,7 @@ Using DexPaprika, show me trending pools on Solana
 | CoinPaprika | 20,000 calls/month | No |
 | DexPaprika | Keyless, and a free key raises the quota ([current figures](https://dexpaprika.com/api/pricing)) | No |
 
-Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, DexPaprika 30 requests/minute on the free tiers and 300 on Pro. On DexPaprika, free-tier data is delayed up to 15 seconds; real-time is the Pro figure.
+Per-minute limits differ per API: CoinPaprika allows 10 requests/second per IP, DexPaprika 15 requests/minute keyless and 30 with a free key, 120 on Dev and 500 on Pro. On DexPaprika, free-tier data is delayed up to 60 seconds; real-time comes with the paid plans.
 
 ## Resources
 

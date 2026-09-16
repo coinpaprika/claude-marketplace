@@ -43,9 +43,14 @@ The old REST path for pools on a single DEX, `/networks/{network}/dexes/{dex}/po
 
 ## Rate Limits
 
-- **Keyless**: 200,000 credits/month per IP, 30/min, data delayed up to 15 seconds. No API key needed to start.
-- **Free API key**: 500,000 credits/month, 30/min, data delayed up to 15 seconds.
-- **Pro** ($99/month): 5,000,000 credits/month, 300/min, real-time data.
+- **Keyless**: 30,000 credits per IP, 15/min, data delayed up to 60 seconds. No API key needed to start.
+- **Free API key**: 100,000 credits, 30/min, data delayed up to 60 seconds.
+- **Dev** ($30/month): 500,000 credits, 120/min, real-time data.
+- **Pro** ($99/month): 5,000,000 credits, 500/min, real-time data.
+
+The two free allowances count a rolling 30 days rather than a calendar month, so
+they refill continuously and there is no reset date to wait for. Dev and Pro run
+on the Stripe billing period.
 
 One request costs one credit. Batch endpoints cost one credit per item.
 

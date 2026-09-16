@@ -176,7 +176,7 @@ Data from: DexPaprika MCP | [N] pools analyzed | [timestamp]
 
 **Rate limits and quota**:
 - Responses carry no quota field, so do not try to read one. Budget calls instead
-- Keyless is 200,000 credits per month per IP at 30 requests per minute; a free key raises it to 500,000; Pro is 5,000,000 at 300 per minute
+- Keyless is 30,000 credits per IP at 15 requests per minute and a free key raises it to 100,000 at 30, both over a rolling 30 days; Dev is 500,000 at 120 and Pro 5,000,000 at 500, per billing period
 - On a 429, back off and retry rather than repeating the same call
 
 ## Style Guidelines
