@@ -38,11 +38,11 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 - `getTokenPools(network, token_address, rationale)` - All pools containing a token
 - `getPoolDetails(network, pool_address, rationale)` - Pool state, volume, transactions
 - `getNetworkPools(network, rationale)` - Top pools on a network
-- `getNetworkPoolsFilter(network, volume_24h_min, txns_24h_min, ...)` - Filter pools by criteria
+- `getNetworkPoolsFilter(network, volume_24h_min, txns_24h_min, ...)` - Filter pools by criteria; `created_after: "-24h"` finds pools created in the last day
 - `getDexPools(network, dex)` - Pools for a specific DEX. REST equivalent: `GET /networks/{network}/pools/search?dex_name={dex_id}`; the old `/networks/{network}/dexes/{dex}/pools` path returns HTTP 410
 - `getNetworkDexes(network)` - DEXes on a network
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
-- `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity (optional UNIX timestamp filters, 7-day max)
+- `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity (optional `from`/`to`: a relative offset such as `-1h`, Unix seconds, RFC3339 or YYYY-MM-DD; 7-day max)
 - `getTokenMultiPrices(network, tokens, rationale)` - Batch prices (max 10 tokens)
 - `search(query, rationale)` - Search tokens, pools, DEXes across all networks
 - `getTopTokens(network, rationale)` - Top tokens on a network by volume, liquidity, transactions, FDV, or 24h price change
