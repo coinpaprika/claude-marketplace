@@ -14,7 +14,7 @@
       "name": "dexpaprika",
       "source": "./plugins/dexpaprika-claude-plugin",
       "description": "DeFi data across 35 blockchains: DEXes, liquidity pools, tokens, OHLCV, transactions. 17 MCP tools, 4 skills, 1 agent. No API key needed to start.",
-      "version": "2.0.6",
+      "version": "2.0.7",
       "author": {
         "name": "CoinPaprika & DexPaprika"
       },

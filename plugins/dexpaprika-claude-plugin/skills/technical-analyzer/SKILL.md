@@ -20,8 +20,9 @@ Use DexPaprika MCP tools:
 
 1. `getCapabilities(rationale)` - Load network synonyms for input normalization
 2. `getPoolOHLCV(network, pool_address, start, interval, limit)` - Fetch candle data
+   - `start` is easiest as an offset from now: `-24h`, `-7d`
    - Intervals: `1m`, `5m`, `10m`, `15m`, `30m`, `1h`, `6h`, `12h`, `24h`
-   - Max 366 data points per request
+   - Up to 1000 candles per request
    - Fetch 100+ candles for robust pattern detection
 3. `getPoolDetails(network, pool_address, rationale)` - Current pool state and volume
 4. `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity
