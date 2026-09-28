@@ -1,6 +1,6 @@
 ---
 name: technical-analyzer
-description: Analyze OHLCV data to identify candlestick patterns, support/resistance levels, trend formations, and technical indicators. Activates when users ask about price patterns, chart analysis, or technical signals for any pool across 35 chains.
+description: Analyze OHLCV data to identify candlestick patterns, support/resistance levels, trend formations, and technical indicators. Activates when users ask about price patterns, chart analysis, or technical signals for any pool across 36 chains.
 ---
 
 # Technical Analysis Skill
