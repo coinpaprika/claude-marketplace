@@ -3,7 +3,7 @@
 Official Claude Code plugins for **CoinPaprika** and **DexPaprika**: crypto market data and DeFi analytics, no API key needed to start.
 
 - **CoinPaprika**: 12,000+ cryptocurrencies, 350+ exchanges, 31 MCP tools
-- **DexPaprika**: 36 blockchains, 36M+ pools, 17 MCP tools
+- **DexPaprika**: 36 blockchains, 36M+ pools, 18 MCP tools
 
 Both APIs have a free tier that works without an API key. Paid plans raise the quotas; see the rate limits below.
 
@@ -44,10 +44,10 @@ cd claude-marketplace
 
 ### DexPaprika Plugin
 
-**17 MCP tools** for decentralized exchange data:
+**18 MCP tools** for decentralized exchange data:
 - Token prices and details across 36 blockchains
 - Liquidity pool discovery, filtering, and details
-- OHLCV charts for any pool
+- OHLCV charts for any pool, and USD candles for a token across all its pools (with your Dev or Pro key)
 - Pool transactions and trading activity
 - Batch price lookups (up to 10 tokens)
 - Cross-chain search for tokens, pools, and DEXes
@@ -56,7 +56,7 @@ cd claude-marketplace
 
 **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
-**No API key needed to start**: keyless access at 15 requests/minute, with data delayed up to 60 seconds. A free key raises that to 30/minute and raises the credit allowance. Paid plans are real-time: Dev is $30/month at 120/minute and Pro $99/month at 500/minute. Quotas change, so read the current figures from [pricing](https://dexpaprika.com/api/pricing).
+**No API key needed to start**: every tool works without one except `getTokenOHLCV`, which runs on your own Dev, Pro or Enterprise key. Set `DEXPAPRIKA_API_KEY` in the environment you start Claude Code from and the plugin sends it; without it the plugin connects exactly as before. Keys are at [console.dexpaprika.com](https://console.dexpaprika.com), plans and current quotas on [pricing](https://dexpaprika.com/api/pricing).
 
 ## Updating
 
@@ -112,7 +112,7 @@ claude-marketplace/
 │   │   └── README.md
 │   └── dexpaprika-claude-plugin/
 │       ├── .claude-plugin/
-│       │   └── plugin.json                 # Plugin manifest (17 MCP tools)
+│       │   └── plugin.json                 # Plugin manifest (18 MCP tools)
 │       ├── agents/
 │       │   └── defi-data-analyst.md        # DeFi security agent
 │       ├── skills/
