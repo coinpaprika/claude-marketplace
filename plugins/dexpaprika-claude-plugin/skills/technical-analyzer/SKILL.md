@@ -24,6 +24,7 @@ Use DexPaprika MCP tools:
    - Intervals: `1m`, `5m`, `10m`, `15m`, `30m`, `1h`, `6h`, `12h`, `24h`
    - Up to 1000 candles per request
    - Fetch 100+ candles for robust pattern detection
+   - For a token rather than one pair, `getTokenOHLCV(network, token_address, start, interval, limit)` returns USD candles across all its pools. It needs the user's Dev or Pro key; on `DP401_API_KEY_REQUIRED` or `DP403_PLAN_REQUIRED`, use `getPoolOHLCV` on the token's most liquid pool and say so
 3. `getPoolDetails(network, pool_address, rationale)` - Current pool state and volume
 4. `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity
 5. `getTokenDetails(network, token_address, rationale)` - Token context

@@ -4,7 +4,7 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 
 ## What's Included
 
-- **17 MCP tools**: tokens, pools, OHLCV, transactions, search, batch prices
+- **18 MCP tools**: tokens, pools, OHLCV, transactions, search, batch prices
 - **1 agent** (`@defi-data-analyst`): DeFi security analysis, honeypot detection, scam identification
 - **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
@@ -24,6 +24,7 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 | `getPoolTransactions` | Recent swaps and trades |
 | `getTokenDetails` | Token price, liquidity, metrics |
 | `getTokenPools` | All pools containing a token |
+| `getTokenOHLCV` | USD candles for a token across every pool it trades in. Needs your own Dev, Pro or Enterprise key (see below) |
 | `getTokenMultiPrices` | Batch prices for up to 10 tokens |
 | `getTopTokens` | Top tokens on a network by volume, liquidity, transactions, FDV, or 24h price change |
 | `filterNetworkTokens` | Filter tokens by volume, liquidity, FDV, transactions, creation date |
@@ -41,20 +42,17 @@ The old REST path for pools on a single DEX, `/networks/{network}/dexes/{dex}/po
 | **batch-token-price-lookup** | Quick price checks for multiple tokens |
 | **trending-pools-analyzer** | Discover top pools by 24h volume on any network |
 
-## Rate Limits
+## API key
 
-- **Keyless**: 30,000 credits per IP, 15/min, data delayed up to 60 seconds. No API key needed to start.
-- **Free API key**: 100,000 credits, 30/min, data delayed up to 60 seconds.
-- **Dev** ($30/month): 500,000 credits, 120/min, real-time data.
-- **Pro** ($99/month): 5,000,000 credits, 500/min, real-time data.
+Every tool works without a key except `getTokenOHLCV`, which runs on your own Dev, Pro or Enterprise key and never on ours. To use it, set the key in the environment you start Claude Code from:
 
-The two free allowances count a rolling 30 days rather than a calendar month, so
-they refill continuously and there is no reset date to wait for. Dev and Pro run
-on the Stripe billing period.
+```bash
+export DEXPAPRIKA_API_KEY=YOUR_API_KEY
+```
 
-One request costs one credit. Batch endpoints cost one credit per item.
+The plugin sends it to the hosted server as the `Authorization` header. The server reads it when the session opens, so restart Claude Code after setting or changing it. Without it the plugin connects as before, and `getTokenOHLCV` answers `DP401_API_KEY_REQUIRED`; the agent then falls back to `getPoolOHLCV`.
 
-See the [rate limits guide](https://docs.dexpaprika.com/knowledge-base/rate-limits) for details.
+Get a key at [console.dexpaprika.com](https://console.dexpaprika.com). Plans and current quotas are on [pricing](https://dexpaprika.com/api/pricing), and the [hosted MCP guide](https://docs.dexpaprika.com/ai-integration/hosted-mcp-server#your-own-api-key-for-token-ohlcv) covers the details.
 
 ## Common Network IDs
 
