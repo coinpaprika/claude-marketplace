@@ -1,6 +1,6 @@
 ---
 name: technical-analyzer
-description: Analyze OHLCV data to identify candlestick patterns, support/resistance levels, trend formations, and technical indicators. Activates when users ask about price patterns, chart analysis, or technical signals for any pool across 36 chains.
+description: Analyze OHLCV data and API-computed indicators (RSI, EMA, MACD, Bollinger Bands, VWAP) to identify candlestick patterns, support/resistance levels, trend formations, and momentum signals. Activates when users ask about price patterns, chart analysis, or technical signals for any pool across 36 chains.
 ---
 
 # Technical Analysis Skill
@@ -25,11 +25,15 @@ Use DexPaprika MCP tools:
    - Up to 1000 candles per request
    - Fetch 100+ candles for robust pattern detection
    - For a token rather than one pair, `getTokenOHLCV(network, token_address, start, interval, limit)` returns USD candles across all its pools. It needs the user's Dev or Pro key; on `DP401_API_KEY_REQUIRED` or `DP403_PLAN_REQUIRED`, use `getPoolOHLCV` on the token's most liquid pool and say so
-3. `getPoolDetails(network, pool_address, rationale)` - Current pool state and volume
-4. `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity
-5. `getTokenDetails(network, token_address, rationale)` - Token context
+3. `getPoolIndicator(network, pool_address, indicator, interval, start, rationale)` - RSI, EMA, MACD, Bollinger Bands or VWAP, computed by the API from the pool's completed candles
+   - `indicator`: `rsi`, `ema`, `macd`, `bbands` or `vwap`; always pass `interval`
+   - Send only that indicator's parameters: `period` for rsi, ema, bbands and vwap; `fast_period`, `slow_period` and `signal_period` for macd; `std_dev` for bbands. Any other is refused with 400
+   - For one USD series across all of a token's pools, `getTokenIndicator(network, token_address, indicator, ...)`. It needs the user's Dev or Pro key; on `DP401_API_KEY_REQUIRED` or `DP403_PLAN_REQUIRED`, use `getPoolIndicator` on the token's most liquid pool and say so
+4. `getPoolDetails(network, pool_address, rationale)` - Current pool state and volume
+5. `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity
+6. `getTokenDetails(network, token_address, rationale)` - Token context
 
-**Important:** OHLCV data provides raw price candles only. Technical indicators (EMA, RSI, MACD, VWAP) must be calculated from the raw data.
+**Indicators come from the API.** Read RSI, EMA, MACD, Bollinger Bands and VWAP from `getPoolIndicator` rather than computing them from candles, so the numbers match what the user sees elsewhere. Use `getPoolOHLCV` for what only candles show: candlestick patterns, support and resistance, trend structure and volume. RSI, EMA and MACD are smoothed, so pass a `start` ten or more periods before the values you rely on (`-7d` at `1h`).
 
 ## Analysis Framework
 
@@ -50,11 +54,12 @@ From raw OHLCV candles, determine:
 - Flat highs + flat lows = consolidation
 - Trend strength: strong/moderate/weak based on consistency
 
-### 4. Technical Indicators (calculate from OHLCV)
-- **EMA** (9, 21, 50, 200 periods): Trend direction and crossovers
-- **RSI** (14 period): Overbought >70, oversold <30, divergences
-- **MACD** (12/26/9): Momentum crossovers and histogram
-- **VWAP**: Institutional accumulation/distribution zones
+### 4. Technical Indicators (from getPoolIndicator)
+- **EMA** (`indicator: ema`, `period` 9, 21, 50 or 200): Trend direction and crossovers
+- **RSI** (`indicator: rsi`, period 14): Overbought >70, oversold <30, divergences against price
+- **MACD** (`indicator: macd`, 12/26/9): A histogram that changes sign is a crossover; expanding or contracting histogram for momentum
+- **Bollinger Bands** (`indicator: bbands`, 20 and 2): Price near the upper or lower band, and narrowing bands (a squeeze) before a breakout
+- **VWAP** (`indicator: vwap`, period 14): Price above or below the volume-weighted average
 
 ### 5. Pattern Recognition
 
@@ -90,6 +95,7 @@ INDICATORS
   RSI(14): XX [Overbought/Oversold/Neutral]
   EMA: Price [above/below] EMA 50, [above/below] EMA 200
   MACD: [Bullish/Bearish] crossover, histogram [expanding/contracting]
+  Bollinger: Price at [upper/middle/lower] band, width [narrowing/widening]
 
 PATTERNS DETECTED
   [Pattern name] - [Bullish/Bearish] - [Confidence %]

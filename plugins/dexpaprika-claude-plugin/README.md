@@ -4,7 +4,7 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 
 ## What's Included
 
-- **18 MCP tools**: tokens, pools, OHLCV, transactions, search, batch prices
+- **20 MCP tools**: tokens, pools, OHLCV, technical indicators, transactions, search, batch prices
 - **1 agent** (`@defi-data-analyst`): DeFi security analysis, honeypot detection, scam identification
 - **4 skills**: Token Security Analyzer, Technical Analyzer, Batch Token Price Lookup, Trending Pools Analyzer
 
@@ -21,10 +21,12 @@ DeFi data across 36 blockchains, 36M+ liquidity pools, and 33M+ tokens via the D
 | `getDexPools` | Pools for a specific DEX. REST equivalent: `GET /networks/{network}/pools/search?dex_name={dex_id}` |
 | `getPoolDetails` | Pool details (tokens, volume, liquidity) |
 | `getPoolOHLCV` | Historical price candles (1m to 24h intervals) |
+| `getPoolIndicator` | RSI, EMA, MACD, Bollinger Bands or VWAP for a pool, computed by the API |
 | `getPoolTransactions` | Recent swaps and trades |
 | `getTokenDetails` | Token price, liquidity, metrics |
 | `getTokenPools` | All pools containing a token |
 | `getTokenOHLCV` | USD candles for a token across every pool it trades in. Needs your own Dev, Pro or Enterprise key (see below) |
+| `getTokenIndicator` | The same indicators for a token across every pool it trades in. Needs your own Dev, Pro or Enterprise key (see below) |
 | `getTokenMultiPrices` | Batch prices for up to 10 tokens |
 | `getTopTokens` | Top tokens on a network by volume, liquidity, transactions, FDV, or 24h price change |
 | `filterNetworkTokens` | Filter tokens by volume, liquidity, FDV, transactions, creation date |
@@ -38,19 +40,19 @@ The old REST path for pools on a single DEX, `/networks/{network}/dexes/{dex}/po
 | Skill | What it does |
 |-------|-------------|
 | **token-security-analyzer** | Honeypot detection, rug pull risk, market manipulation analysis |
-| **technical-analyzer** | OHLCV chart analysis, candlestick patterns, support/resistance, indicators |
+| **technical-analyzer** | OHLCV chart analysis, candlestick patterns, support/resistance, API-computed indicators |
 | **batch-token-price-lookup** | Quick price checks for multiple tokens |
 | **trending-pools-analyzer** | Discover top pools by 24h volume on any network |
 
 ## API key
 
-Every tool works without a key except `getTokenOHLCV`, which runs on your own Dev, Pro or Enterprise key and never on ours. To use it, set the key in the environment you start Claude Code from:
+Every tool works without a key except `getTokenOHLCV`, `getTokenIndicator` and `getPoolTransactions`, which run on your own Dev, Pro or Enterprise key and never on ours. To use it, set the key in the environment you start Claude Code from:
 
 ```bash
 export DEXPAPRIKA_API_KEY=YOUR_API_KEY
 ```
 
-The plugin sends it to the hosted server as the `Authorization` header. The server reads it when the session opens, so restart Claude Code after setting or changing it. Without it the plugin connects as before, and `getTokenOHLCV` answers `DP401_API_KEY_REQUIRED`; the agent then falls back to `getPoolOHLCV`.
+The plugin sends it to the hosted server as the `Authorization` header. The server reads it when the session opens, so restart Claude Code after setting or changing it. Without it the plugin connects as before, and those tools answer `DP401_API_KEY_REQUIRED`; the agent then falls back to `getPoolOHLCV`, `getPoolIndicator` or `getPoolDetails`.
 
 Get a key at [console.dexpaprika.com](https://console.dexpaprika.com). Plans and current quotas are on [pricing](https://dexpaprika.com/api/pricing), and the [hosted MCP guide](https://docs.dexpaprika.com/ai-integration/hosted-mcp-server#your-own-api-key-for-token-ohlcv) covers the details.
 
