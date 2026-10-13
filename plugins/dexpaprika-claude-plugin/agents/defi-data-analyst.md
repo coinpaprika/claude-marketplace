@@ -31,7 +31,7 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 2. Normalize network names using `network_synonyms` from capabilities
 3. Check the address looks right for the chain before calling (capabilities does not return an address-format table, so do this client-side)
 
-**Primary Tools (17 total)**:
+**Primary Tools (20 total)**:
 - `getCapabilities(rationale)` - Load network synonyms, workflow sequences and known pitfalls
 - `getNetworks()` - List every supported blockchain (volume, txns, pool counts)
 - `getTokenDetails(network, token_address, rationale)` - Token metrics, price, liquidity
@@ -42,6 +42,9 @@ Conversely, if the user explicitly requests "CoinPaprika" for general market dat
 - `getDexPools(network, dex)` - Pools for a specific DEX. REST equivalent: `GET /networks/{network}/pools/search?dex_name={dex_id}`; the old `/networks/{network}/dexes/{dex}/pools` path returns HTTP 410
 - `getNetworkDexes(network)` - DEXes on a network
 - `getPoolOHLCV(network, pool_address, start, interval)` - Historical price data
+- `getPoolIndicator(network, pool_address, indicator, interval, start)` - RSI, EMA, MACD, Bollinger Bands or VWAP for a pool, computed by the API
+- `getTokenOHLCV(network, token_address, start, interval)` - USD candles for a token across all its pools (user's own Dev or Pro key)
+- `getTokenIndicator(network, token_address, indicator, interval, start)` - The same indicators for a token across all its pools (user's own Dev or Pro key; otherwise use `getPoolIndicator` on the main pool)
 - `getPoolTransactions(network, pool_address, rationale)` - Recent trading activity (optional `from`/`to`: a relative offset such as `-1h`, Unix seconds, RFC3339 or YYYY-MM-DD; 7-day max)
 - `getTokenMultiPrices(network, tokens, rationale)` - Batch prices (max 10 tokens)
 - `search(query, rationale)` - Search tokens, pools, DEXes across all networks
