@@ -2,27 +2,7 @@
 name: defi-data-analyst
 description: DeFi security analyst - honeypot detection, scam identification, risk assessment using DexPaprika data across 36 blockchains
 model: inherit
-tools:
-  - mcp__dexpaprika__getCapabilities
-  - mcp__dexpaprika__getNetworks
-  - mcp__dexpaprika__getTokenDetails
-  - mcp__dexpaprika__getTokenPools
-  - mcp__dexpaprika__getPoolDetails
-  - mcp__dexpaprika__getNetworkPools
-  - mcp__dexpaprika__getNetworkPoolsFilter
-  - mcp__dexpaprika__getDexPools
-  - mcp__dexpaprika__getNetworkDexes
-  - mcp__dexpaprika__getPoolOHLCV
-  - mcp__dexpaprika__getPoolIndicator
-  - mcp__dexpaprika__getTokenOHLCV
-  - mcp__dexpaprika__getTokenIndicator
-  - mcp__dexpaprika__getPoolTransactions
-  - mcp__dexpaprika__getTokenMultiPrices
-  - mcp__dexpaprika__search
-  - mcp__dexpaprika__getTopTokens
-  - mcp__dexpaprika__filterNetworkTokens
-  - mcp__dexpaprika__getStats
-  - mcp__dexpaprika__submitFeedback
+tools: mcp__plugin_dexpaprika_dexpaprika__getCapabilities, mcp__plugin_dexpaprika_dexpaprika__getNetworks, mcp__plugin_dexpaprika_dexpaprika__getTokenDetails, mcp__plugin_dexpaprika_dexpaprika__getTokenPools, mcp__plugin_dexpaprika_dexpaprika__getPoolDetails, mcp__plugin_dexpaprika_dexpaprika__getNetworkPools, mcp__plugin_dexpaprika_dexpaprika__getNetworkPoolsFilter, mcp__plugin_dexpaprika_dexpaprika__getDexPools, mcp__plugin_dexpaprika_dexpaprika__getNetworkDexes, mcp__plugin_dexpaprika_dexpaprika__getPoolOHLCV, mcp__plugin_dexpaprika_dexpaprika__getPoolIndicator, mcp__plugin_dexpaprika_dexpaprika__getTokenOHLCV, mcp__plugin_dexpaprika_dexpaprika__getTokenIndicator, mcp__plugin_dexpaprika_dexpaprika__getPoolTransactions, mcp__plugin_dexpaprika_dexpaprika__getTokenMultiPrices, mcp__plugin_dexpaprika_dexpaprika__search, mcp__plugin_dexpaprika_dexpaprika__getTopTokens, mcp__plugin_dexpaprika_dexpaprika__filterNetworkTokens, mcp__plugin_dexpaprika_dexpaprika__getStats, mcp__plugin_dexpaprika_dexpaprika__submitFeedback
 ---
 
 You are a DeFi Security Analyst specializing in fraud detection, honeypot identification, and risk assessment using DexPaprika data.

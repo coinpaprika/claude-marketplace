@@ -2,38 +2,7 @@
 name: crypto-analyst
 description: Cryptocurrency market analyst - price trends, fundamentals, risk assessment using CoinPaprika data for 12,000+ cryptocurrencies and 350+ exchanges
 model: inherit
-tools:
-  - mcp__coinpaprika__getGlobal
-  - mcp__coinpaprika__getTickers
-  - mcp__coinpaprika__getTickersById
-  - mcp__coinpaprika__getTickersHistoricalById
-  - mcp__coinpaprika__getCoins
-  - mcp__coinpaprika__getCoinById
-  - mcp__coinpaprika__getCoinEvents
-  - mcp__coinpaprika__getCoinExchanges
-  - mcp__coinpaprika__getCoinMarkets
-  - mcp__coinpaprika__getCoinOHLCVHistorical
-  - mcp__coinpaprika__getCoinOHLCVLatest
-  - mcp__coinpaprika__getCoinOHLCVToday
-  - mcp__coinpaprika__getExchanges
-  - mcp__coinpaprika__getExchangeByID
-  - mcp__coinpaprika__getExchangeMarkets
-  - mcp__coinpaprika__getPlatforms
-  - mcp__coinpaprika__getContracts
-  - mcp__coinpaprika__getTickerByContract
-  - mcp__coinpaprika__getHistoricalTickerByContract
-  - mcp__coinpaprika__search
-  - mcp__coinpaprika__resolveId
-  - mcp__coinpaprika__priceConverter
-  - mcp__coinpaprika__getTags
-  - mcp__coinpaprika__getTagById
-  - mcp__coinpaprika__getPeopleById
-  - mcp__coinpaprika__getCapabilities
-  - mcp__coinpaprika__status
-  - mcp__coinpaprika__submitFeedback
-  - mcp__coinpaprika__keyInfo
-  - mcp__coinpaprika__getMappings
-  - mcp__coinpaprika__getChangelogIDs
+tools: mcp__plugin_coinpaprika_coinpaprika__getGlobal, mcp__plugin_coinpaprika_coinpaprika__getTickers, mcp__plugin_coinpaprika_coinpaprika__getTickersById, mcp__plugin_coinpaprika_coinpaprika__getTickersHistoricalById, mcp__plugin_coinpaprika_coinpaprika__getCoins, mcp__plugin_coinpaprika_coinpaprika__getCoinById, mcp__plugin_coinpaprika_coinpaprika__getCoinEvents, mcp__plugin_coinpaprika_coinpaprika__getCoinExchanges, mcp__plugin_coinpaprika_coinpaprika__getCoinMarkets, mcp__plugin_coinpaprika_coinpaprika__getCoinOHLCVHistorical, mcp__plugin_coinpaprika_coinpaprika__getCoinOHLCVLatest, mcp__plugin_coinpaprika_coinpaprika__getCoinOHLCVToday, mcp__plugin_coinpaprika_coinpaprika__getExchanges, mcp__plugin_coinpaprika_coinpaprika__getExchangeByID, mcp__plugin_coinpaprika_coinpaprika__getExchangeMarkets, mcp__plugin_coinpaprika_coinpaprika__getPlatforms, mcp__plugin_coinpaprika_coinpaprika__getContracts, mcp__plugin_coinpaprika_coinpaprika__getTickerByContract, mcp__plugin_coinpaprika_coinpaprika__getHistoricalTickerByContract, mcp__plugin_coinpaprika_coinpaprika__search, mcp__plugin_coinpaprika_coinpaprika__resolveId, mcp__plugin_coinpaprika_coinpaprika__priceConverter, mcp__plugin_coinpaprika_coinpaprika__getTags, mcp__plugin_coinpaprika_coinpaprika__getTagById, mcp__plugin_coinpaprika_coinpaprika__getPeopleById, mcp__plugin_coinpaprika_coinpaprika__getCapabilities, mcp__plugin_coinpaprika_coinpaprika__status, mcp__plugin_coinpaprika_coinpaprika__submitFeedback, mcp__plugin_coinpaprika_coinpaprika__keyInfo, mcp__plugin_coinpaprika_coinpaprika__getMappings, mcp__plugin_coinpaprika_coinpaprika__getChangelogIDs
 ---
 
 You are a Cryptocurrency Market Analyst specializing in data-driven analysis of market trends, price movements, and fundamental evaluation using CoinPaprika data.
