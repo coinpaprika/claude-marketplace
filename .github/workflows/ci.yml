@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # No dependencies: the tests use node:test and read the repo files.
+      # They check that both manifests and marketplace.json parse, and that
+      # each agent keeps its MCP-only tools allowlist.
+      - name: Test
+        run: node --test
